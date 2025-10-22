@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Alimentación Morcillo</title>
+    <style>
+        :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.4;color:#222}
+        body{max-width:900px;margin:2rem auto;padding:1rem; background-color: burlywood;}
+        header{display:flex;align-items:center;gap:1rem;border-bottom:2px solid #eee;padding-bottom:1rem;margin-bottom:1rem}
+        header img{width:96px;height:96px;object-fit:cover;border-radius:8px}
+        main{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+        section{background:#fafafa;padding:1rem;border:1px solid #eee;border-radius:6px}
+        footer{border-top:2px solid #eee;padding-top:0.75rem;margin-top:1rem;text-align:center;color:#555}
+        form{display:flex;flex-direction:column;gap:.75rem;background:#fff;padding:1rem;border:1px solid #eee;border-radius:6px}
+        label{font-weight:600;font-size:.95rem}
+        input[type="text"], input[type="password"]{padding:.5rem;border:1px solid #ccc;border-radius:4px}
+        .range-row{display:flex;align-items:center;gap:.75rem}
+        .range-row output{min-width:3rem;text-align:center}
+        button{padding:.6rem .9rem;border:0;background:#0b71f1;color:#fff;border-radius:5px;cursor:pointer}
+        @media (max-width:640px){ main{grid-template-columns:1fr} header{flex-direction:row} }
+        ol li:first-of-type { text-transform: uppercase; }
+        ul li:first-of-type { color: purple; text-size-adjust: 30px; }
+        #morcilla-img {
+            border: 2px solid #9a1091;
+        }
+        li{
+            border: 1px solid black;
+        }
+        footer{
+            height: 100px;
+            background-size: contain;
+            background-image:url("https://imag.bonviveur.com/una-morcilla-de-cerdo-y-sangre-con-cebolla.jpg"); /* o "morcilla_footer.jpg" según dónde esté */
+            background-repeat: repeat-x; /* repetir solo en el eje X */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="morcilla-img" src="https://imgs.search.brave.com/Bk7vaOZdpWRyjdGg8bjP33Y-tnRe9zDXm1rZ7ti-0PQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzUxLzQ0Lzk5/LzM2MF9GXzUxNDQ5/OTc1X05ka1E2TW5X/YVJVSmplZjAxcURN/U2UzY2VhN1JhTDdv/LmpwZw" alt="Foto de morcilla" />
+        <div>
+            <h1>Alimentación Morcillo</h1>
+            <p>Recetas y productos tradicionales</p>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="ingredientes-title">
+            <h2 id="ingredientes-title">Ingredientes - Arroz a la cubana</h2>
+            <ul>
+                <li>Arroz (200 g para 2 personas)</li>
+                <li>Plátanos maduros (1-2)</li>
+                <li>Tomate para salsa (2-3) o salsa de tomate</li>
+                <li>Huevos (2)</li>
+                <li>Aceite de oliva</li>
+                <li>Sal y pimienta al gusto</li>
+                <li>Opcional: ajo y cebolla para la salsa</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="elaboracion-title">
+            <h2 id="elaboracion-title">Elaboración - Paso a paso</h2>
+            <ol>
+                <li>Lavar y cocer el arroz en abundante agua con sal hasta que esté tierno. Escurrir.</li>
+                <li>Preparar la salsa: pochar cebolla y ajo (si se usa), añadir tomate triturado y cocinar hasta espesar. Salpimentar.</li>
+                <li>Freír los plátanos en rodajas hasta que estén dorados y reservar sobre papel absorbente.</li>
+                <li>Freír los huevos al gusto (fritos con la yema blanda es lo tradicional).</li>
+                <li>Servir una cama de arroz, añadir la salsa de tomate por encima, colocar el huevo frito y las rodajas de plátano al lado.</li>
+                <li>Disfrutar caliente. Se puede acompañar con morcilla si se desea.</li>
+            </ol>
+        </section>
+    </main>
+
+    <section>
+        <h2>Formulario</h2>
+        <form action="#" method="post" aria-label="Formulario de contacto">
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required />
+            </div>
+
+            <div>
+                <label for="edad">Edad</label>
+                <div class="range-row">
+                    <input type="range" id="edad" name="edad" min="18" max="190" value="18" />
+                    <output for="edad" id="edadOutput">18</output>
+                </div>
+            </div>
+
+            <div>
+                <label for="pass">Contraseña</label>
+                <input type="password" id="pass" name="password" required />
+            </div>
+
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        @2025 Morcillosa C/Embutido, 89
+    </footer>
+
+    <script>
+        // Mostrar el valor actual del rango de edad
+        const edad = document.getElementById('edad');
+        const out = document.getElementById('edadOutput');
+        const actualizar = () => out.value = edad.value;
+        edad.addEventListener('input', actualizar);
+        actualizar();
+    </script>
+</body>
+</html>
