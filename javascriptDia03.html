@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Sample HTML Document</title> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <input type="text" id="entrada" placeholder="Introduce numero">
+    <input type="button" id="boton"></input>
+    <div id="resultado"></div>
+
+    <script type="text/javascript">
+        let boton = document.getElementById("boton");
+        boton.addEventListener("click", sacaNombre);
+
+        let resultado1 = 0;
+        for (let index = 0; index < 100; index++) {
+            if (index % 2 === 0) {
+                resultado1+=index;
+            }
+        }
+
+
+        document.write("The sum of even numbers from 0 to 99 is: " + resultado1 + "<br>");  
+
+        let numeroimpares = 0;
+        let resultado2 = 0;
+        for(let i = 1; numeroimpares <= 102; i++) {
+            if (i % 2 !== 0) {
+                numeroimpares++;
+                resultado2+=i;
+            }
+        }
+        document.write("The sum of the first 103 odd numbers is: " + resultado2 + "<br>");      
+        document.write("la suma de 3, 5, 7 es: " + sumar(3, 5, 7) + "<br>");    
+        document.write("la suma de 10, 20, 30, 40, 50 es: " + sumar(10, 20, 30, 40, 50) + "<br>");    
+
+        
+        function sacaNombre(source)
+        {
+            let valorIntroducido= document.getElementById("entrada").value;
+            let resultadoDiv = document.getElementById("resultado");
+            let nuevoelemento = document.createElement("p");
+            nuevoelemento.textContent = "Has introducido: " + valorIntroducido;
+            resultadoDiv.appendChild(nuevoelemento);
+            console.log(source);
+        }
+
+        function sumar(){
+            let numParametros =arguments.length;
+            let suma = 0;
+            for(let j = 0; j < numParametros; j++){
+                suma += arguments[j];
+            }   
+            return suma;
+        }
+    </script>   
+</body>
+</html>
