@@ -5,50 +5,175 @@
         <title>Dia05</title>
         <style>
         body {
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            font-family: Arial;
             padding: 2rem;
+            background: white;
         }
         section {
-            border: 1px solid #ddd;
+            border: 2px solid black;
             padding: 1rem;
-            border-radius: 6px;
-            max-width: 540px;
+            max-width: 400px;
+            background: #f0f0f0;
+        }
+        #pantalla {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1.5rem;
+            text-align: right;
+            border: 1px solid black;
+            margin-bottom: 1rem;
+            background: white;
+            box-sizing: border-box;
+        }
+        .botones-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
         }
         button {
-            margin-top: 0.5rem;
-            padding: 0.4rem 0.8rem;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .numero {
+            background: white;
+        }
+        .operacion {
+            background: #ddd;
+        }
+        .igual {
+            background: #ccc;
+        }
+        .limpiar {
+            background: #ffcccc;
+        }
+        .numero-0 {
+            grid-column: span 2;
+        }
+        h1 {
+            text-align: center;
+            color: black;
+            margin-top: 0;
         }
         </style>
     </head>
     <body>
-        <div {
-            margin: 5px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }>
+        <section>
+            <h1>Calculadora</h1>
+            <input type="text" id="pantalla" readonly value="0">
+            
+            <div class="botones-container">
+                <button class="limpiar" onclick="limpiar()">C</button>
+                <button class="operacion" onclick="operar('**')">^</button>
+                <button class="operacion" onclick="operar('/')">÷</button>
+                <button class="operacion" onclick="operar('*')">×</button>
+                
+                <button class="numero" onclick="agregarNumero('7')">7</button>
+                <button class="numero" onclick="agregarNumero('8')">8</button>
+                <button class="numero" onclick="agregarNumero('9')">9</button>
+                <button class="operacion" onclick="operar('-')">−</button>
+                
+                <button class="numero" onclick="agregarNumero('4')">4</button>
+                <button class="numero" onclick="agregarNumero('5')">5</button>
+                <button class="numero" onclick="agregarNumero('6')">6</button>
+                <button class="operacion" onclick="operar('+')">+</button>
+                
+                <button class="numero" onclick="agregarNumero('1')">1</button>
+                <button class="numero" onclick="agregarNumero('2')">2</button>
+                <button class="numero" onclick="agregarNumero('3')">3</button>
+                <button class="igual" onclick="calcular()" rowspan="2">=</button>
+                
+                <button class="numero numero-0" onclick="agregarNumero('0')">0</button>
+                <button class="numero" onclick="agregarDecimal()">.</button>
+            </div>
+        </section>
 
-            <button id="boton1">Boton 1</button>
-            <button id="boton2">Boton 2</button>
-            <button id="boton3">Boton 3</button>
-            <button id="boton4">Boton 4</button>
-            <button id="boton5">Boton 5</button>
-            <button id="boton6">Boton 6</button>
-            <button id="boton7">Boton 7</button>
-            <button id="boton8">Boton 8</button>
-            <button id="boton9">Boton 9</button>
-            <button id="boton10">Boton 10</button>
-            <button id="boton11">Boton 11</button>
-            <button id="boton12">Boton 12</button>
-            <button id="boton13">Boton 13</button>
-            <button id="boton14">Boton 14</button>
-            <button id="boton15">Boton 15</button>
-
-        </div>
         <script>
-            const button = document.getElementById("boton1")
-            button.addEventListener("click", () => {
-                alert("¡Hola Mundo!");
-            });
+            let pantalla = document.getElementById('pantalla');
+            let numeroActual = '0';
+            let operacion = null;
+            let numeroAnterior = null;
+            
+            function actualizarPantalla() {
+                pantalla.value = numeroActual;
+            }
+            
+            function agregarNumero(numero) {
+                if (numeroActual === '0') {
+                    numeroActual = numero;
+                } else {
+                    numeroActual += numero;
+                }
+                actualizarPantalla();
+            }
+            
+            function agregarDecimal() {
+                if (!numeroActual.includes('.')) {
+                    numeroActual += '.';
+                    actualizarPantalla();
+                }
+            }
+            
+            function limpiar() {
+                numeroActual = '0';
+                operacion = null;
+                numeroAnterior = null;
+                actualizarPantalla();
+            }
+            
+            function operar(op) {
+                if (operacion !== null) {
+                    calcular();
+                }
+                numeroAnterior = numeroActual;
+                numeroActual = '0';
+                operacion = op;
+            }
+            
+            function calcular() {
+                if (operacion === null || numeroAnterior === null) {
+                    return;
+                }
+                
+                let num1 = parseFloat(numeroAnterior);
+                let num2 = parseFloat(numeroActual);
+                let resultado;
+                
+                switch(operacion) {
+                    case '+':
+                        resultado = num1 + num2;
+                        break;
+                    case '-':
+                        resultado = num1 - num2;
+                        break;
+                    case '*':
+                        resultado = num1 * num2;
+                        break;
+                    case '/':
+                        if (num2 === 0) {
+                            numeroActual = 'Error';
+                            actualizarPantalla();
+                            operacion = null;
+                            numeroAnterior = null;
+                            return;
+                        }
+                        resultado = num1 / num2;
+                        break;
+                    case '**':
+                        resultado = Math.pow(num1, num2);
+                        break;
+                    default:
+                        return;
+                }
+                
+                numeroActual = resultado.toString();
+                operacion = null;
+                numeroAnterior = null;
+                actualizarPantalla();
+            }
+            
+            actualizarPantalla();
         </script>
     </body>
 
