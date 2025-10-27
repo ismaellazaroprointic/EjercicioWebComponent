@@ -123,7 +123,7 @@
             }
             
             function operar(op) {
-                if (operacion !== null) {
+                if (operacion) {
                     calcular();
                 }
                 numeroAnterior = numeroActual;
@@ -132,7 +132,7 @@
             }
             
             function calcular() {
-                if (operacion === null || numeroAnterior === null) {
+                if (!operacion || !numeroAnterior) {
                     return;
                 }
                 
