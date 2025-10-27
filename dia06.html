@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Heraldo de Aragón</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #fafafa;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-bottom: 2px solid #333;
+        }
+
+        header img {
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .container {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        p {
+            margin-bottom: 10px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #333;
+        }
+
+        p::first-letter {
+            font-size: 4em;
+            font-weight: bold;
+            color: #000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #f0f0f0;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        footer img {
+            width: 150px;
+        }
+
+        .column {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <picture>
+            <source media="(min-width: 769px)" srcset="images/heraldop_desktop.jpg">
+            <source media="(max-width: 768px)" srcset="images/heraldop_mobile.jpg">
+            <img src="images/heraldop_desktop.jpg" alt="Heraldo de Aragón">
+        </picture>
+    </header>
+
+    <div class="container">
+        <div class="column">
+            <p>Es un habitante característico de los bosques maduros de Europa, Asia templada y América del Norte. En este vasto territorio aparece bajo cierto número de subespecies, que se diferencian unas de otras por la coloración y el tamaño, hasta tal punto que antiguamente se les consideraba como especies autóctonas. Podemos citar, por ejemplo, a los grandes grizzlys (Ursus arctos horribilis) y el kodiak (Ursus arctos middendorffi).</p>
+            <p>Son plantígrados. En algunas situaciones desfavorables pueden erguirse sobre sus patas traseras para aumentar su campo de visión. Su oído es extremadamente agudo y desarrollado, al igual que el olfato, que es excelente, finísimo y, sin duda, su sentido más desarrollado y el que más les ayuda en su vida cotidiana.</p>
+        </div>
+        <div class="column">
+            <p>Dimorfismo sexual: El dimorfismo sexual es algo claramente notorio en los osos pardos; un ejemplo son los osos kodiak: en estado salvaje, los machos de esta subespecie normalmente alcanzan un peso de alrededor de 450 kg, mientras que las hembras suelen pesar unos 250 kg, siendo considerablemente más pequeñas.</p>
+            <p>Evolución y taxonomía: El oso pardo se denomina a veces bruin, del inglés medio. Este nombre tiene su origen en la fábula Historia de Roman de Renart traducida por William Caxton del neerlandés medio. bruun o bruyn, que significa marrón (el color).</p>
+        </div>
+        <div class="column">
+            <p>Nombres generalizados y evolución: Se cree que los osos pardos evolucionaron a partir del Ursus etruscus en Asia. El oso pardo, según Kurten (1976), se ha declarado como "claramente derivado de la población asiática de Ursus savini hace unos 800 000 años.</p>
+            <p>Taxonomía científica: Los científicos utilizan muchos métodos para definir las especies y subespecies de oso, ya que ninguno de ellos es siempre eficaz. La taxonomía del oso pardo y la clasificación de las subespecies se ha descrito como "formidable y confusa".</p>
+        </div>
+    </div>
+
+    <footer>
+        <picture>
+            <source media="(min-width: 769px)" srcset="images/heraldo_pie_desktop.jpg">
+            <source media="(max-width: 768px)" srcset="images/heraldo_pie_mobile.jpg">
+            <img src="images/heraldo_pie_desktop.jpg" alt="Heraldo de Aragón">
+        </picture>
+    </footer>
+</body>
+</html>
