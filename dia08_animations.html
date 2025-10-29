@@ -1,0 +1,105 @@
+<!--Buscar una imagen de una trasto, zarrio. 
+Lo que quiero es que vaya saltando por la parte superior de la pantalla.
+
+----------------------------------
+
+https://developers.thecatapi.com/view-account
+Después de que el zarrio termine su animación quiero ver una colección aleatoria de gaticos, por lo menos 10.-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animación de Zarrio</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        background-color: #f0f0f0;
+      }
+      #zarrio {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        transform: translateX();
+        animation: jumpAndMove 2s linear;
+      }
+      div#gaticos-container {
+        max-width: 2000px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      @keyframes jumpAndMove {
+        0%,
+        100% {
+          transform: translateX(0) translateY(0);
+        }
+        10%{
+          transform: translateX(30%) translateY(10%);  
+        }
+        20%{
+          transform: translateX(60%) translateY(0%);  
+        }
+        30%{
+          transform: translateX(90%) translateY(10%);  
+        }
+        40%{
+          transform: translateX(120%) translateY(0%);  
+        }
+        50%{
+          transform: translateX(150%) translateY(10%);  
+        }
+        60%{
+          transform: translateX(120%) translateY(0%);  
+        }
+        70%{
+          transform: translateX(90%) translateY(10%);  
+        }
+        80%{
+          transform: translateX(60%) translateY(0%);  
+        }
+        90%{
+          transform: translateX(30%) translateY(10%);  
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img id="zarrio" src="images/naranja.jpg" alt="Zarrio" />
+    <div id="gaticos-container"></div>
+    <script>
+        const zarrio = document.getElementById('zarrio');
+        zarrio.addEventListener('animationend', async () => {
+            zarrio.remove();
+            try {
+                const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=10', {
+                    method: 'GET',
+                    headers: {
+                        'x-api-key': 'live_UFy0EbC0aiMISdB4NN5CUQ1Cp3PenWRkrId8SQelcSPJMcyxD04eUdPUcRo8Fg1s'
+                    }
+                });
+                const data = await response.json();
+                console.log(data);
+                const gaticosContainer = document.getElementById('gaticos-container');
+                data.forEach(cat => {
+                    const img = document.createElement('img');
+                    img.src = cat.url;
+                    img.alt = 'Gatico';
+                    img.style.width = '150px';
+                    img.style.margin = '10px';
+                    gaticosContainer.appendChild(img);
+                });
+            } catch (error) {
+                console.error('Error al obtener las imágenes de gaticos:', error);
+            }
+        });
+    </script>
+  </body>
+</html>
