@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MiniZoo · Operarios</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="cabecera"></div>
+
+  <main class="container py-4">
+    <h1 class="mb-4">Nuestro equipo</h1>
+
+    <section class="operarios-grid">
+      <!-- Tarjeta Operario 1 -->
+      <div class="card operario-card">
+        <img src="img/operarios/highRes/Operario01.jpg" class="card-img-top" alt="Manolo">
+        <div class="card-body">
+          <h2 class="h5 card-title">Manolo</h2>
+          <p class="card-text">Es timido. No le gusta enseñar la <em>cara en las fotos</em>.</p>
+        </div>
+      </div>
+      <!-- Tarjeta Operario 2 -->
+      <div class="card operario-card">
+        <img src="img/operarios/highRes/Operario02.jpg" class="card-img-top" alt="Pepe">
+        <div class="card-body">
+          <h2 class="h5 card-title">Pepe</h2>
+          <p class="card-text">Olvidona! Ni dos besos ni nada?</p>
+        </div>
+      </div>
+      <!-- Tarjeta Operario 3 -->
+      <div class="card operario-card">
+        <img src="img/operarios/highRes/Operario03.jpg" class="card-img-top" alt="Ramon">
+        <div class="card-body">
+          <h2 class="h5 card-title">Ramon</h2>
+          <p class="card-text">🥵🥵🥵</p>
+        </div>
+      </div>
+      <!-- Tarjeta Operario 4 -->
+      <div class="card operario-card">
+        <img src="img/operarios/highRes/Operario04.jpg" class="card-img-top" alt="Nacho">
+        <div class="card-body">
+          <h2 class="h5 card-title">Nacho</h2>
+          <p class="card-text">Nacho.<br><br><b>A partir de aqui las descripciones las hace la IA, por eso no hacen gracia.</b> Pido disculpas.
+          </p>
+        </div>
+      </div>
+      <!-- Tarjeta Operario 5 -->
+      <div class="card operario-card">
+        <img src="img/operarios/highRes/Operario05.jpg" class="card-img-top" alt="Julian">
+        <div class="card-body">
+          <h2 class="h5 card-title">Julian</h2>
+          <p class="card-text">Domador de horarios imposibles. Si hay que madrugar para dar biberón a un <em>rinoceronte</em>, él ya lleva dos cafés. 😂</p>
+        </div>
+      </div>
+      <!-- Tarjeta Operario 6 -->
+      <div class="card operario-card">
+        <img src="img/operarios/highRes/Operario06.jpg" class="card-img-top" alt="Nuria">
+        <div class="card-body">
+          <h2 class="h5 card-title">Nuria</h2>
+          <p class="card-text">Experta en <strong>picos y plumas</strong>. Enseña a los patos a hacer fila india. Nivel de paciencia: <em>legendario</em>.</p>
+        </div>
+      </div>
+      <!-- Tarjeta Operario 7 -->
+      <div class="card operario-card">
+            <img src="img/operarios/highRes/Operario07.jpg" class="card-img-top" alt="Amadora">
+        <div class="card-body">
+          <h2 class="h5 card-title">Amadora</h2>
+          <p class="card-text">Cuida a los cachorros como si fueran sobrinos. Diagnostica a distancia: “eso es hambre o <em>sueñito</em>”. 💅</p>
+        </div>
+      </div>
+      <!-- Tarjeta Operario 8 -->
+      <div class="card operario-card">
+        <img src="img/operarios/highRes/Operario08.jpg" class="card-img-top" alt="Estanislado">
+        <div class="card-body">
+          <h2 class="h5 card-title">Estanislada</h2>
+          <p class="card-text">Logística total. Si falta alpiste, aparece. Si sobra, lo convierte en <strong>buffet</strong> para colibríes. 🚚✨</p>
+        </div>
+      </div>
+      <!-- Tarjeta Operario 9 -->
+      <div class="card operario-card">
+        <img src="img/operarios/highRes/Operario09.jpg" class="card-img-top" alt="Evaristo">
+        <div class="card-body">
+          <h2 class="h5 card-title">Evaristo</h2>
+          <p class="card-text">Manitas del parque. Arregla una valla con bridas, cinta y <em>magia</em>. Lema: “si no vibra, funciona”. 🛠️</p>
+        </div>
+      </div>
+      <!-- Tarjeta Operario 10 -->
+      <div class="card operario-card">
+        <img src="img/operarios/highRes/Operario10.jpg" class="card-img-top" alt="Cha Phu Zhon">
+        <div class="card-body">
+          <h2 class="h5 card-title">Cha Phu Zhon</h2>
+          <p class="card-text">¿?</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-5">
+
+    <section aria-labelledby="alta-operario">
+      <h2 id="alta-operario" class="h4 mb-3">Dar de alta nuevo operario</h2>
+      <form id="form-operario" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre completo</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" minlength="10" maxlength="20" required>
+          <div class="invalid-feedback">Entre 10 y 20 caracteres.</div>
+        </div>
+        <div class="col-md-3">
+          <label for="edad" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="edad" name="edad" min="18" max="99" required>
+          <div class="invalid-feedback">Debe estar entre 18 y 99.</div>
+        </div>
+        <div class="col-md-3">
+          <label for="cp" class="form-label">Código Postal</label>
+          <input type="text" class="form-control" id="cp" name="cp" pattern="^\d{5}$" placeholder="28001">
+          <div class="invalid-feedback">Introduce un CP válido de 5 dígitos.</div>
+        </div>
+        <div class="col-12">
+          <label for="direccion" class="form-label">Dirección completa</label>
+          <input type="text" class="form-control" id="direccion" name="direccion" maxlength="100" placeholder="C/ Ejemplo, 123, 2ºB, Ciudad">
+          <div class="form-text">Máximo 100 caracteres.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="600123123">
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="nombre@dominio.com">
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Guardar operario</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <div id="pie"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

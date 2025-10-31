@@ -1,0 +1,64 @@
+/* Tipografías opcionales */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=UnifrakturCook:wght@700&display=swap');
+
+:root {
+  --medieval-font: 'UnifrakturCook', cursive;
+}
+
+html { scroll-behavior: smooth; }
+
+body { font-family: 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+/* Grid de operarios */
+.operarios-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.operario-card {
+  flex: 1 1 220px;
+  max-width: 320px;
+}
+.operario-card img { height: 180px; object-fit: cover; }
+
+/* Ecosistemas: 3 columnas y estilado de primera letra */
+.eco-texto {
+  column-count: 3;
+  column-gap: 1.25rem;
+}
+.eco-texto p {
+  margin-block: 1em; /* espaciado anterior y posterior */
+  text-align: justify;
+}
+.eco-texto p:first-child { margin-block-start: 0; margin-top: 0; }
+.eco-texto p::first-letter {
+  font-size: 200%;
+  font-family: var(--medieval-font);
+  text-shadow: 1px 1px 0 rgba(0,0,0,.25);
+}
+
+/* Animación canguro */
+#canguro-saltarin {
+  position: fixed;
+  left: -200px;
+  bottom: 15vh;
+  width: 200px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.canguro-activo {
+  animation: saltar 3s ease-in-out forwards;
+}
+
+@keyframes saltar {
+  0%   { transform: translateX(0) translateY(0) scale(1); opacity: 1; }
+  20%  { transform: translateX(20vw) translateY(-10vh) scale(1.05); }
+  40%  { transform: translateX(40vw) translateY(0) scale(1); }
+  60%  { transform: translateX(60vw) translateY(-12vh) scale(1.05); }
+  80%  { transform: translateX(80vw) translateY(0) scale(1); }
+  100% { transform: translateX(110vw) translateY(-8vh) scale(1.02); opacity: 0; }
+}
+
+/* Utilidades */
+.figure-caption { min-height: 3rem; }
