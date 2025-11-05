@@ -1,0 +1,13 @@
+{
+  "name": "dia01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ejemplo.js",
+  "scripts": {
+    "asd": "tsc Figuras.ts && node Figuras.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
