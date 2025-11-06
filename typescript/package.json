@@ -1,0 +1,14 @@
+{
+  "name": "typescript-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p .",
+    "dev": "tsc -p . --watch",
+    "start:dia02": "node dist/Dia02/ejemploPersona.js",
+    "start:dia03": "node dist/Dia03/tuArchivo.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
