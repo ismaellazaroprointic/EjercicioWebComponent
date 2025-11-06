@@ -108,5 +108,25 @@ class Nadar implements Movimiento {
     }
 }
 
-const salto = new Saltar();
-console.log(salto.accion());
+enum Tipo {Genin,Chunin,Jounin};
+
+class Ninja {
+
+    ataque: IArmable;
+    defensa: IDefendible;
+    armadura: Armadura;
+    movimiento: Movimiento;
+
+    constructor(ataque: IArmable, defensa: IDefendible, armadura: Armadura, movimiento: Movimiento) {
+
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.armadura = armadura;
+        this.movimiento = movimiento;
+    }
+
+
+
+}
+
+let ninja1 = new Ninja(new Katana(), new EscudoCuadrado(), new ArmaduraCuero(), new Saltar());
