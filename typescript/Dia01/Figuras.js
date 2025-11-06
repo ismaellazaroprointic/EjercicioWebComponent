@@ -84,17 +84,19 @@ var Rectangulo = /** @class */ (function (_super) {
 }(Figura));
 var Triangulo = /** @class */ (function (_super) {
     __extends(Triangulo, _super);
-    function Triangulo(x, y, base, altura) {
+    function Triangulo(x, y, ladoA, ladoB, ladoC) {
         var _this = _super.call(this, x, y) || this;
-        _this.base = base;
-        _this.altura = altura;
+        _this.ladoA = ladoA;
+        _this.ladoB = ladoB;
+        _this.ladoC = ladoC;
         return _this;
     }
     Triangulo.prototype.damePerimetro = function () {
-        return this.base + this.altura + this.base;
+        return this.ladoA + this.ladoB + this.ladoC;
     };
     Triangulo.prototype.dameSuperficie = function () {
-        return (this.base * this.altura) / 2;
+        var s = (this.ladoA + this.ladoB + this.ladoC) / 2;
+        return Math.sqrt(s * (s - this.ladoA) * (s - this.ladoB) * (s - this.ladoC));
     };
     Triangulo.prototype.damePosicion = function () {
         return "Pos X: " + this.x + "Pos Y:" + this.y;
@@ -107,8 +109,8 @@ var miCirculo1 = new Circulo(5, 6, 5);
 var miCirculo2 = new Circulo(7, 4, 3);
 var miRectangulo1 = new Rectangulo(3, 3, 4, 5);
 var miRectangulo2 = new Rectangulo(5, 5, 7, 3);
-var miTriangulo1 = new Triangulo(3, 3, 4, 5);
-var miTriangulo2 = new Triangulo(5, 5, 7, 3);
+var miTriangulo1 = new Triangulo(3, 3, 3, 4, 5);
+var miTriangulo2 = new Triangulo(5, 5, 7, 3, 5);
 console.log("El cuadrado de lados 4, tiene un perimetro de ".concat(miCuadrado1.damePerimetro()));
 console.log("El cuadrado de lados 4, tiene un area de ".concat(miCuadrado1.dameSuperficie()));
 console.log("El cuadrado de lados 7, tiene un perimetro de ".concat(miCuadrado2.damePerimetro()));
@@ -121,7 +123,7 @@ console.log("El rectangulo de base 4 y altura 5, tiene un perimetro de ".concat(
 console.log("El rectangulo de base 4 y altura 5, tiene un area de ".concat(miRectangulo1.dameSuperficie()));
 console.log("El rectangulo de base 7 y altura 3, tiene un perimetro de ".concat(miRectangulo2.damePerimetro()));
 console.log("El rectangulo de base 7 y altura 3, tiene un area de ".concat(miRectangulo2.dameSuperficie()));
-console.log("El triangulo de base 4 y altura 5, tiene un perimetro de ".concat(miTriangulo1.damePerimetro()));
-console.log("El triangulo de base 4 y altura 5, tiene un area de ".concat(miTriangulo1.dameSuperficie()));
-console.log("El triangulo de base 7 y altura 3, tiene un perimetro de ".concat(miTriangulo2.damePerimetro()));
-console.log("El triangulo de base 7 y altura 3, tiene un area de ".concat(miTriangulo2.dameSuperficie()));
+console.log("El triangulo de lados 3, 4 y 5, tiene un perimetro de ".concat(miTriangulo1.damePerimetro()));
+console.log("El triangulo de lados 3, 4 y 5, tiene un area de ".concat(miTriangulo1.dameSuperficie()));
+console.log("El triangulo de lados 7, 3 y 5, tiene un perimetro de ".concat(miTriangulo2.damePerimetro()));
+console.log("El triangulo de lados 7, 3 y 5, tiene un area de ".concat(miTriangulo2.dameSuperficie()));

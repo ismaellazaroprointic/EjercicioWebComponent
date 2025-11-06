@@ -86,21 +86,24 @@ class Rectangulo extends Figura
 }
 class Triangulo extends Figura
 {
-    base: number;
-    altura: number;
-    constructor(x: number, y: number, base: number, altura: number)
+    ladoA: number;
+    ladoB: number;
+    ladoC: number;
+    constructor(x: number, y: number, ladoA: number, ladoB: number, ladoC: number)
     {
         super(x,y);
-        this.base = base;
-        this.altura = altura;
+        this.ladoA = ladoA;
+        this.ladoB = ladoB;
+        this.ladoC = ladoC;
     }
     damePerimetro(): number
     {
-        return this.base+this.altura+this.base;
+        return this.ladoA+this.ladoB+this.ladoC;
     }
     dameSuperficie(): number
     {
-        return (this.base*this.altura)/2;
+        const s = (this.ladoA + this.ladoB + this.ladoC) / 2;
+        return Math.sqrt(s * (s - this.ladoA) * (s - this.ladoB) * (s - this.ladoC));
     }
     damePosicion(): string
     {
@@ -113,8 +116,8 @@ let miCirculo1 = new Circulo(5,6,5);
 let miCirculo2 = new Circulo(7,4,3);
 let miRectangulo1 = new Rectangulo(3,3,4,5);
 let miRectangulo2 = new Rectangulo(5,5,7,3);
-let miTriangulo1 = new Triangulo(3,3,4,5);
-let miTriangulo2 = new Triangulo(5,5,7,3);
+let miTriangulo1 = new Triangulo(3,3,3,4,5);
+let miTriangulo2 = new Triangulo(5,5,7,3,5);
 console.log(`El cuadrado de lados 4, tiene un perimetro de ${miCuadrado1.damePerimetro()}`);
 console.log(`El cuadrado de lados 4, tiene un area de ${miCuadrado1.dameSuperficie()}`);
 console.log(`El cuadrado de lados 7, tiene un perimetro de ${miCuadrado2.damePerimetro()}`);
@@ -127,7 +130,7 @@ console.log(`El rectangulo de base 4 y altura 5, tiene un perimetro de ${miRecta
 console.log(`El rectangulo de base 4 y altura 5, tiene un area de ${miRectangulo1.dameSuperficie()}`);
 console.log(`El rectangulo de base 7 y altura 3, tiene un perimetro de ${miRectangulo2.damePerimetro()}`);
 console.log(`El rectangulo de base 7 y altura 3, tiene un area de ${miRectangulo2.dameSuperficie()}`);
-console.log(`El triangulo de base 4 y altura 5, tiene un perimetro de ${miTriangulo1.damePerimetro()}`);
-console.log(`El triangulo de base 4 y altura 5, tiene un area de ${miTriangulo1.dameSuperficie()}`);
-console.log(`El triangulo de base 7 y altura 3, tiene un perimetro de ${miTriangulo2.damePerimetro()}`);
-console.log(`El triangulo de base 7 y altura 3, tiene un area de ${miTriangulo2.dameSuperficie()}`);
+console.log(`El triangulo de lados 3, 4 y 5, tiene un perimetro de ${miTriangulo1.damePerimetro()}`);
+console.log(`El triangulo de lados 3, 4 y 5, tiene un area de ${miTriangulo1.dameSuperficie()}`);
+console.log(`El triangulo de lados 7, 3 y 5, tiene un perimetro de ${miTriangulo2.damePerimetro()}`);
+console.log(`El triangulo de lados 7, 3 y 5, tiene un area de ${miTriangulo2.dameSuperficie()}`);
