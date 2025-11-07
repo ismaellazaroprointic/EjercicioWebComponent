@@ -33,4 +33,3 @@ console.log(coche3.imprime() + "\nSu velocidad crucero es: " + coche3.velocidadC
 let velocidadMedia = (coche1.velocidad + coche2.velocidad + coche3.velocidad) / 3;
 
 console.log("La velocidad media de los vehiculos es: " + velocidadMedia);
-
