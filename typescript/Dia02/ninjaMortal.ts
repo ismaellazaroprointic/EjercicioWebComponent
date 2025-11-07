@@ -125,8 +125,21 @@ class Ninja {
         this.movimiento = movimiento;
     }
 
+    capacidadArmadura(): number {
+
+        return this.armadura.protege();
+    }
+
+    capacidadDefensa(): number {
+
+        return this.defensa.dameFuerzaDeDefensa();
+    }
 
 
 }
 
 let ninja1 = new Ninja(new Katana(), new EscudoCuadrado(), new ArmaduraCuero(), new Saltar());
+let ninja2 = new Ninja(new Kunai(), new EscudoTriangular(), new ArmaduraPlacas(), new Nadar());
+
+console.log("El primer ninja tiene " + ninja1.capacidadDefensa() + " puntos de defensa.");
+console.log("El primer ninja tiene " + ninja2.capacidadDefensa() + " puntos de defensa.");

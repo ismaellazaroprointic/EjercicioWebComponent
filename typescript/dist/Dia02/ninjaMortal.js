@@ -64,5 +64,28 @@ class Nadar {
         return "Nado a velocidad constante";
     }
 }
-const salto = new Saltar();
-console.log(salto.accion());
+var Tipo;
+(function (Tipo) {
+    Tipo[Tipo["Genin"] = 0] = "Genin";
+    Tipo[Tipo["Chunin"] = 1] = "Chunin";
+    Tipo[Tipo["Jounin"] = 2] = "Jounin";
+})(Tipo || (Tipo = {}));
+;
+class Ninja {
+    constructor(ataque, defensa, armadura, movimiento) {
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.armadura = armadura;
+        this.movimiento = movimiento;
+    }
+    capacidadArmadura() {
+        return this.armadura.protege();
+    }
+    capacidadDefensa() {
+        return this.defensa.dameFuerzaDeDefensa();
+    }
+}
+let ninja1 = new Ninja(new Katana(), new EscudoCuadrado(), new ArmaduraCuero(), new Saltar());
+let ninja2 = new Ninja(new Kunai(), new EscudoTriangular(), new ArmaduraPlacas(), new Nadar());
+console.log("El primer ninja tiene " + ninja1.capacidadDefensa() + " puntos de defensa.");
+console.log("El primer ninja tiene " + ninja2.capacidadDefensa() + " puntos de defensa.");
