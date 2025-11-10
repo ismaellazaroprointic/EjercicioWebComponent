@@ -6,7 +6,8 @@
     "build": "tsc -p .",
     "dev": "tsc -p . --watch",
     "start:dia02": "node dist/Dia02/ninjaMortal.js",
-    "start:dia03": "node dist/Dia03/ejercicio3.js"
+    "start:dia03": "node dist/Dia03/ejercicio3.js",
+    "start:dia04": "node dist/Dia04/medicosMedicinas.js"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
