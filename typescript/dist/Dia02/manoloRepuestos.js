@@ -69,13 +69,13 @@ class LuzCruce extends Repuesto {
         return "Soy una luz de cruce y mi identificador es " + this.identificador;
     }
 }
-let rueda1 = new Rueda("1234567890", 200);
-let rueda2 = new Rueda("1234567891", 200);
-let retrovisor1 = new Retrovisor("1234567892", 50);
-let retrovisor2 = new Retrovisor("1234567893", 50);
-let luzCruce1 = new LuzCruce("1234567894", 60);
-let luzCruce2 = new LuzCruce("1234567895", 60);
-let arrayRepuestos = [
+const rueda1 = new Rueda("1234567890", 200);
+const rueda2 = new Rueda("1234567891", 200);
+const retrovisor1 = new Retrovisor("1234567892", 50);
+const retrovisor2 = new Retrovisor("1234567893", 50);
+const luzCruce1 = new LuzCruce("1234567894", 60);
+const luzCruce2 = new LuzCruce("1234567895", 60);
+const arrayRepuestos = [
     rueda1,
     rueda2,
     retrovisor1,

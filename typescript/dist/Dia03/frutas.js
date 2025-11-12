@@ -11,12 +11,14 @@ function findCherries(fruit) {
 function mayorQueCero(fruit) {
     return fruit.quantity > 0;
 }
-function hazAlgo(fruit) {
+/* function hazAlgo(fruit: Fruit): void {
+
     console.log(fruit);
-}
-function findManzana(fruit) {
-    return fruit.name === 'apples';
-}
+} */
+/* function findManzana(fruit: Fruit): boolean {
+
+    return fruit.name === 'apples'
+} */
 function filterQuantity(fruit) {
     return fruit.quantity > 2;
 }

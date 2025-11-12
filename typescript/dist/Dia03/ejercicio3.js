@@ -26,7 +26,7 @@ class Animal {
         return edad;
     }
     dameDatos() {
-        let fechaNacimiento = `${this.diaNacimiento}/${this.mesNacimiento}/${this.yearNacimiento}`;
+        const fechaNacimiento = `${this.diaNacimiento}/${this.mesNacimiento}/${this.yearNacimiento}`;
         console.log("El nombre del animal es: " +
             this.nombre +
             "\nSu fecha de nacimiento es: " +

@@ -26,7 +26,7 @@ class Envio {
     }
 }
 
-let listaEnvios: Envio[] = [new Envio("patata", 28397235n, 34, true), new Envio("zanahoria", 8965n, 100, false), new Envio("manzana", 34643n, 567, true)];
+const listaEnvios: Envio[] = [new Envio("patata", 28397235n, 34, true), new Envio("zanahoria", 8965n, 100, false), new Envio("manzana", 34643n, 567, true)];
 
 listaEnvios.forEach(envio => {
     console.log(envio.calcularIva());

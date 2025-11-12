@@ -21,14 +21,14 @@ function mayorQueCero(fruit: Fruit): boolean {
     return fruit.quantity > 0;
 }
 
-function hazAlgo(fruit: Fruit): void {
+/* function hazAlgo(fruit: Fruit): void {
 
     console.log(fruit);
-}
-function findManzana(fruit: Fruit): boolean {
+} */
+/* function findManzana(fruit: Fruit): boolean {
 
     return fruit.name === 'apples'
-}
+} */
 
 function filterQuantity(fruit: Fruit): boolean {
 

@@ -19,5 +19,5 @@ const coche3 = new Coche("0096OL", 4, 350, "Coche Magico");
 console.log(coche1.imprime() + "\nSu velocidad crucero es: " + coche1.velocidadCrucer());
 console.log(coche2.imprime() + "\nSu velocidad crucero es: " + coche2.velocidadCrucer());
 console.log(coche3.imprime() + "\nSu velocidad crucero es: " + coche3.velocidadCrucer());
-let velocidadMedia = (coche1.velocidad + coche2.velocidad + coche3.velocidad) / 3;
+const velocidadMedia = (coche1.velocidad + coche2.velocidad + coche3.velocidad) / 3;
 console.log("La velocidad media de los vehiculos es: " + velocidadMedia);

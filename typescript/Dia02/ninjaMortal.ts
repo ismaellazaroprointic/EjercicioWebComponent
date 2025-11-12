@@ -9,12 +9,12 @@ class Katana implements IArmable {
     }
 }
 
-class Shuriken implements IArmable {
+/* class Shuriken implements IArmable {
 
     dameFuerzaDeAtaque(): number {
         return 10;
     }
-}
+} */
 
 class Kunai implements IArmable {
 
@@ -23,12 +23,12 @@ class Kunai implements IArmable {
     }
 }
 
-class Kama implements IArmable {
+/* class Kama implements IArmable {
 
     dameFuerzaDeAtaque(): number {
         return 5;
     }
-}
+} */
 
 interface IDefendible {
 
@@ -54,12 +54,12 @@ interface Armadura {
     protege(): number;
 }
 
-class ArmaduraPaja implements Armadura{
+/* class ArmaduraPaja implements Armadura{
 
     protege(): number {
         return 10;
     }
-}
+} */
 
 class ArmaduraCuero implements Armadura {
 
@@ -80,19 +80,19 @@ interface Movimiento {
     accion(): string;
 }
 
-class Andar implements Movimiento {
+/* class Andar implements Movimiento {
 
     accion(): string {
         return "Ando lentamente";
     }
-}
+} */
 
-class Correr implements Movimiento {
+/* class Correr implements Movimiento {
 
     accion(): string {
         return "Corro a toda leche";
     }
-}
+} */
 
 class Saltar implements Movimiento {
 
@@ -107,8 +107,6 @@ class Nadar implements Movimiento {
         return "Nado a velocidad constante";
     }
 }
-
-enum Tipo {Genin,Chunin,Jounin};
 
 class Ninja {
 
@@ -138,8 +136,8 @@ class Ninja {
 
 }
 
-let ninja1 = new Ninja(new Katana(), new EscudoCuadrado(), new ArmaduraCuero(), new Saltar());
-let ninja2 = new Ninja(new Kunai(), new EscudoTriangular(), new ArmaduraPlacas(), new Nadar());
+const ninja1 = new Ninja(new Katana(), new EscudoCuadrado(), new ArmaduraCuero(), new Saltar());
+const ninja2 = new Ninja(new Kunai(), new EscudoTriangular(), new ArmaduraPlacas(), new Nadar());
 
 console.log("El primer ninja tiene " + ninja1.capacidadDefensa() + " puntos de defensa.");
 console.log("El primer ninja tiene " + ninja2.capacidadDefensa() + " puntos de defensa.");

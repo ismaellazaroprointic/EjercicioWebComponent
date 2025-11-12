@@ -1,0 +1,17 @@
+"use strict";
+class Astronauta {
+    constructor(identificador, nombreCompleto, edad) {
+        this.identificador = identificador;
+        this.nombreCompleto = nombreCompleto;
+        this.edad = edad;
+    }
+    dameIdentificador() {
+        return this.identificador;
+    }
+    dameNombreCompleto() {
+        return this.nombreCompleto;
+    }
+    dameEdad() {
+        return this.edad;
+    }
+}

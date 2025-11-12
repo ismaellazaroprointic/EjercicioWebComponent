@@ -110,14 +110,14 @@ class Triangulo extends Figura
         return "Pos X: "+this.x+"Pos Y:"+this.y;
     }
 }
-let miCuadrado1 = new Cuadrado(3,3,4);
-let miCuadrado2 = new Cuadrado(5,5,7);
-let miCirculo1 = new Circulo(5,6,5);
-let miCirculo2 = new Circulo(7,4,3);
-let miRectangulo1 = new Rectangulo(3,3,4,5);
-let miRectangulo2 = new Rectangulo(5,5,7,3);
-let miTriangulo1 = new Triangulo(3,3,3,4,5);
-let miTriangulo2 = new Triangulo(5,5,7,3,5);
+const miCuadrado1 = new Cuadrado(3,3,4);
+const miCuadrado2 = new Cuadrado(5,5,7);
+const miCirculo1 = new Circulo(5,6,5);
+const miCirculo2 = new Circulo(7,4,3);
+const miRectangulo1 = new Rectangulo(3,3,4,5);
+const miRectangulo2 = new Rectangulo(5,5,7,3);
+const miTriangulo1 = new Triangulo(3,3,3,4,5);
+const miTriangulo2 = new Triangulo(5,5,7,3,5);
 console.log(`El cuadrado de lados 4, tiene un perimetro de ${miCuadrado1.damePerimetro()}`);
 console.log(`El cuadrado de lados 4, tiene un area de ${miCuadrado1.dameSuperficie()}`);
 console.log(`El cuadrado de lados 7, tiene un perimetro de ${miCuadrado2.damePerimetro()}`);

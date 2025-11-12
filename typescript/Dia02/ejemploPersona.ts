@@ -73,15 +73,15 @@ class Coordinador extends Profesor
     }
 }
 
-let Rocio = new Alumno("Rocio",30,"76328278D",true);
-let Jacinto  =  new Profesor("Jacinto",23,"Medidos");
-let Pilar = new Coordinador("Pila",34,"universitarios","mañana");
-let alumno1 = new Alumno("Ismael",20,"12345678A",true);
-let alumno2 = new Alumno("Juan",21,"12345678B",false);
-let alumno3 = new Alumno("Maria",22,"12345678C",true);
-let profesor1 = new Profesor("Juan",30,"Matematicas");
+const Rocio = new Alumno("Rocio",30,"76328278D",true);
+const Jacinto  =  new Profesor("Jacinto",23,"Medidos");
+const Pilar = new Coordinador("Pila",34,"universitarios","mañana");
+const alumno1 = new Alumno("Ismael",20,"12345678A",true);
+const alumno2 = new Alumno("Juan",21,"12345678B",false);
+const alumno3 = new Alumno("Maria",22,"12345678C",true);
+const profesor1 = new Profesor("Juan",30,"Matematicas");
 
-let ArrayPersonas :Persona[] = []
+const ArrayPersonas :Persona[] = []
 ArrayPersonas.push(Rocio); 
 ArrayPersonas.push(Jacinto);
 ArrayPersonas.push(Pilar);

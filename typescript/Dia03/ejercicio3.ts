@@ -42,7 +42,7 @@ class Animal {
   }
 
   dameDatos(): void {
-    let fechaNacimiento = `${this.diaNacimiento}/${this.mesNacimiento}/${this.yearNacimiento}`;
+    const fechaNacimiento = `${this.diaNacimiento}/${this.mesNacimiento}/${this.yearNacimiento}`;
     console.log(
       "El nombre del animal es: " +
         this.nombre +

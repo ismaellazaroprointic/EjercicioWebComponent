@@ -12,7 +12,7 @@ function mostrarNombres(nombres: string[]): void {
 
 function palindromo(nombres: string[]): string[] {
 
-    let nombresRevertidos = nombres.map(nombre => {
+    const nombresRevertidos = nombres.map(nombre => {
 
         let nombreRevertido = "";
 

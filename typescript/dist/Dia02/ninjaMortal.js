@@ -4,19 +4,15 @@ class Katana {
         return 50;
     }
 }
-class Shuriken {
-    dameFuerzaDeAtaque() {
+/* class Shuriken implements IArmable {
+
+    dameFuerzaDeAtaque(): number {
         return 10;
     }
-}
+} */
 class Kunai {
     dameFuerzaDeAtaque() {
         return 15;
-    }
-}
-class Kama {
-    dameFuerzaDeAtaque() {
-        return 5;
     }
 }
 class EscudoTriangular {
@@ -29,11 +25,12 @@ class EscudoCuadrado {
         return 40;
     }
 }
-class ArmaduraPaja {
-    protege() {
+/* class ArmaduraPaja implements Armadura{
+
+    protege(): number {
         return 10;
     }
-}
+} */
 class ArmaduraCuero {
     protege() {
         return 30;
@@ -44,16 +41,18 @@ class ArmaduraPlacas {
         return 50;
     }
 }
-class Andar {
-    accion() {
+/* class Andar implements Movimiento {
+
+    accion(): string {
         return "Ando lentamente";
     }
-}
-class Correr {
-    accion() {
+} */
+/* class Correr implements Movimiento {
+
+    accion(): string {
         return "Corro a toda leche";
     }
-}
+} */
 class Saltar {
     accion() {
         return "Salto alto";
@@ -64,13 +63,6 @@ class Nadar {
         return "Nado a velocidad constante";
     }
 }
-var Tipo;
-(function (Tipo) {
-    Tipo[Tipo["Genin"] = 0] = "Genin";
-    Tipo[Tipo["Chunin"] = 1] = "Chunin";
-    Tipo[Tipo["Jounin"] = 2] = "Jounin";
-})(Tipo || (Tipo = {}));
-;
 class Ninja {
     constructor(ataque, defensa, armadura, movimiento) {
         this.ataque = ataque;
@@ -85,7 +77,7 @@ class Ninja {
         return this.defensa.dameFuerzaDeDefensa();
     }
 }
-let ninja1 = new Ninja(new Katana(), new EscudoCuadrado(), new ArmaduraCuero(), new Saltar());
-let ninja2 = new Ninja(new Kunai(), new EscudoTriangular(), new ArmaduraPlacas(), new Nadar());
+const ninja1 = new Ninja(new Katana(), new EscudoCuadrado(), new ArmaduraCuero(), new Saltar());
+const ninja2 = new Ninja(new Kunai(), new EscudoTriangular(), new ArmaduraPlacas(), new Nadar());
 console.log("El primer ninja tiene " + ninja1.capacidadDefensa() + " puntos de defensa.");
 console.log("El primer ninja tiene " + ninja2.capacidadDefensa() + " puntos de defensa.");

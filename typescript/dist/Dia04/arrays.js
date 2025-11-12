@@ -7,7 +7,7 @@ function mostrarNombres(nombres) {
     });
 }
 function palindromo(nombres) {
-    let nombresRevertidos = nombres.map(nombre => {
+    const nombresRevertidos = nombres.map(nombre => {
         let nombreRevertido = "";
         for (let index = 0; index < nombre.length; index++) {
             nombreRevertido = nombre[index] + nombreRevertido;
