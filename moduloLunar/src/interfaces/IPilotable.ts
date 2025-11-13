@@ -1,4 +1,4 @@
-interface IPilotable {
+export interface IPilotable {
 
     dameIdentificador(): string;
     dameNombreCompleto(): string;

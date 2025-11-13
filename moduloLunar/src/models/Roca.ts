@@ -1,4 +1,4 @@
-class Roca {
+export class Roca {
 
     id: string;
     nombre: string;

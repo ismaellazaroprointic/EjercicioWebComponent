@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Mision = void 0;
 class Mision {
     constructor(piloto, mision, entrada, salida) {
         this.piloto = piloto;
@@ -8,12 +10,13 @@ class Mision {
     }
     analiza(miRoca) {
         if (this.mision.isValid(miRoca)) {
-            this.salida.muestra(`La roca ${miRoca.nombre} cumple la misión`);
+            this.salida.muestra(true, miRoca);
             return true;
         }
         else {
-            this.salida.muestra(`La roca ${miRoca.nombre} NO cumple la misión`);
+            this.salida.muestra(false, miRoca);
             return false;
         }
     }
 }
+exports.Mision = Mision;

@@ -1,4 +1,7 @@
-class ValidadorIgneo implements IValidable{
+import { Roca } from "../models/Roca";
+import { IValidable } from "../interfaces/IValidable";
+
+export class ValidadorIgneo implements IValidable{
 
     isValid(roca: Roca): boolean {
 

@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Roca = void 0;
 class Roca {
     constructor(id, nombre, grupo, dureza, tamañoGrano, clasificacion, tamañoCristales, temperaturaFormacion, estructura, formaGranos, textura) {
         if (!/^[A-Za-z]{2}\d{4}[A-Za-z]{2}$/.test(nombre)) {
@@ -38,3 +40,4 @@ class Roca {
         this.textura = textura;
     }
 }
+exports.Roca = Roca;

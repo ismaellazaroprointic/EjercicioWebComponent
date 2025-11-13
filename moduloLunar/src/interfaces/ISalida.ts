@@ -1,4 +1,6 @@
-interface ISalida {
+import {Roca} from "../models/Roca";
 
-    muestra(cadena: string): void;
+export interface ISalida {
+
+    muestra(cadena: boolean, miRoca: Roca): void;
 }

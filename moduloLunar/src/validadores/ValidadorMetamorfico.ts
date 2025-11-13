@@ -1,7 +1,9 @@
-class ValidadorMetamorfico implements IValidable{
+import { Roca } from "../models/Roca";
+import { IValidable } from "../interfaces/IValidable";
+
+export class ValidadorMetamorfico implements IValidable{
 
     isValid(roca: Roca): boolean {
-
         if(roca.grupo === "Metamorficas" && (roca.tamañoGrano.desc === "medio" || roca.tamañoGrano.desc === "fino") && roca.textura === "Vitrea"){
             return true;
         } else {

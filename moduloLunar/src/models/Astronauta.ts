@@ -1,4 +1,6 @@
-class Astronauta implements IPilotable{
+import { IPilotable } from "../interfaces/IPilotable";
+
+export class Astronauta implements IPilotable{
 
     identificador: string;
     nombreCompleto: string;

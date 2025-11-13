@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Astronauta = void 0;
 class Astronauta {
     constructor(identificador, nombreCompleto, edad) {
         this.identificador = identificador;
@@ -15,3 +17,4 @@ class Astronauta {
         return this.edad;
     }
 }
+exports.Astronauta = Astronauta;

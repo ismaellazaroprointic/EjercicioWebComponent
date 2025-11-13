@@ -1,4 +1,10 @@
-class Mision {
+import {Roca} from "./Roca";
+import { IPilotable } from "../interfaces/IPilotable";
+import { IEntrada } from "../interfaces/IEntrada";
+import { ISalida } from "../interfaces/ISalida";
+import { IValidable } from "../interfaces/IValidable";
+
+export class Mision {
 
     piloto: IPilotable;
     mision: IValidable;
@@ -15,10 +21,10 @@ class Mision {
     analiza(miRoca: Roca): boolean{
 
         if(this.mision.isValid(miRoca)){
-            this.salida.muestra(`La roca ${miRoca.nombre} cumple la misión`);
+            this.salida.muestra(true, miRoca);
             return true;
         } else {
-            this.salida.muestra(`La roca ${miRoca.nombre} NO cumple la misión`);
+            this.salida.muestra(false, miRoca);
             return false;
         }
     }
