@@ -1,10 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Roca = void 0;
-class Roca {
+export class Roca {
     constructor(id, nombre, grupo, dureza, tamañoGrano, clasificacion, tamañoCristales, temperaturaFormacion, estructura, formaGranos, textura) {
-        if (!/^[A-Za-z]{2}\d{4}[A-Za-z]{2}$/.test(nombre)) {
-            throw new Error("El nombre debe tener el formato LLDDDDLL (2 letras, 4 números, 2 letras)");
+        if (!/^[A-Za-z]{2}\d{4}[A-Za-z]{2}$/.test(id)) {
+            alert("El ID debe tener el formato LLDDDDLL (2 letras, 4 números, 2 letras)");
+            throw new Error("El ID debe tener el formato LLDDDDLL (2 letras, 4 números, 2 letras)");
         }
         if (tamañoGrano.grado < 2) {
             tamañoGrano.desc = "fino";
@@ -40,4 +38,3 @@ class Roca {
         this.textura = textura;
     }
 }
-exports.Roca = Roca;

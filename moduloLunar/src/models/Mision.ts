@@ -1,8 +1,8 @@
-import {Roca} from "./Roca";
-import { IPilotable } from "../interfaces/IPilotable";
-import { IEntrada } from "../interfaces/IEntrada";
-import { ISalida } from "../interfaces/ISalida";
-import { IValidable } from "../interfaces/IValidable";
+import {Roca} from "./Roca.js";
+import { IPilotable } from "../interfaces/IPilotable.js";
+import { IEntrada } from "../interfaces/IEntrada.js";
+import { ISalida } from "../interfaces/ISalida.js";
+import { IValidable } from "../interfaces/IValidable.js";
 
 export class Mision {
 

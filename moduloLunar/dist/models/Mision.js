@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Mision = void 0;
-class Mision {
+export class Mision {
     constructor(piloto, mision, entrada, salida) {
         this.piloto = piloto;
         this.mision = mision;
@@ -19,4 +16,3 @@ class Mision {
         }
     }
 }
-exports.Mision = Mision;

@@ -1,4 +1,4 @@
-import { Roca } from "../models/Roca";
+import { Roca } from "../models/Roca.js";
 
 export interface IEntrada {
 

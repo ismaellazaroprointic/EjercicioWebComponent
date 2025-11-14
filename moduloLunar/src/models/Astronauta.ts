@@ -1,4 +1,4 @@
-import { IPilotable } from "../interfaces/IPilotable";
+import { IPilotable } from "../interfaces/IPilotable.js";
 
 export class Astronauta implements IPilotable{
 

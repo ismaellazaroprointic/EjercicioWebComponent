@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.EntradaReducida = void 0;
-const Roca_1 = require("../models/Roca");
-class EntradaReducida {
+import { Roca } from "../models/Roca.js";
+export class EntradaReducida {
     leer(datos) {
         var _a, _b, _c, _d, _e, _f, _g;
         // Mapea claves "cortas" propias de placeholders
@@ -17,7 +14,6 @@ class EntradaReducida {
         const estructura = String((_e = datos["estructura"]) !== null && _e !== void 0 ? _e : "");
         const formaGranos = String((_f = datos["forma"]) !== null && _f !== void 0 ? _f : "");
         const textura = String((_g = datos["textura"]) !== null && _g !== void 0 ? _g : "");
-        return new Roca_1.Roca(id, nombre, grupo, dureza, { grado: tamañoGranoGrado, desc: "" }, clasificacion, tamañoCristales, temperaturaFormacion, estructura, formaGranos, textura);
+        return new Roca(id, nombre, grupo, dureza, { grado: tamañoGranoGrado, desc: "" }, clasificacion, tamañoCristales, temperaturaFormacion, estructura, formaGranos, textura);
     }
 }
-exports.EntradaReducida = EntradaReducida;

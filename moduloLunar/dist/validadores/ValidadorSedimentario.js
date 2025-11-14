@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidadorSedimentario = void 0;
-class ValidadorSedimentario {
+export class ValidadorSedimentario {
     isValid(roca) {
         if (roca.grupo === "Sedimentarias" && roca.textura == "Faneritica") {
             return true;
@@ -11,4 +8,3 @@ class ValidadorSedimentario {
         }
     }
 }
-exports.ValidadorSedimentario = ValidadorSedimentario;

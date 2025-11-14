@@ -1,5 +1,5 @@
-import { Roca } from "../models/Roca";
-import { IValidable } from "../interfaces/IValidable";
+import { Roca } from "../models/Roca.js";
+import { IValidable } from "../interfaces/IValidable.js";
 
 export class ValidadorSedimentario implements IValidable{
 

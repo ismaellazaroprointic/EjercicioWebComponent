@@ -3,9 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <title>Módulo Lunar</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <h1>Módulo Lunar</h1>
+  <main class="layout">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Centro de Control Geológico</p>
+      <h1>Módulo Lunar</h1>
+      <p class="hero__intro">
+        Registra y analiza las muestras recolectadas por los astronautas para asegurar
+        su clasificación correcta antes de enviarlas a la base principal.
+      </p>
+    </div>
+  </header>
+  <section class="panel panel-form">
   <form id="formulario" autocomplete="off">
     <div class="campo">
       <label for="id">Identificador</label>
@@ -69,82 +81,26 @@
     </div>
     <button type="submit">Enviar</button>
   </form>
-  <style>
-    #formulario {
-      max-width: 450px;
-      margin: 0 auto;
-      padding: 1rem;
-      background: #fcfcfc;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px #0001;
-      font-family: inherit;
-    }
-    .campo {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 1rem;
-      position: relative;
-    }
-    .campo label {
-      margin-bottom: 0.4rem;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-    .campo input,
-    .campo select {
-      padding: 0.4rem 0.7rem;
-      font-size: 1rem;
-      border: 1px solid #bbb;
-      border-radius: 4px;
-    }
-    /* Mobile: labels ocultas y placeholders visibles */
-    @media (max-width: 640px) {
-      .campo label {
-        opacity: 0;
-        height: 0;
-        width: 0;
-        overflow: hidden;
-        pointer-events: none;
-        position: absolute;
-      }
-      .campo input::placeholder,
-      .campo select:invalid {
-        color: #888;
-        opacity: 1 !important;
-      }
-    }
-    /* Desktop: labels visibles y placeholders ocultos */
-    @media (min-width: 641px) {
-      .campo label {
-        opacity: 1;
-        height: auto;
-        width: auto;
-        position: static;
-      }
-      /* Oculta el placeholder en desktop (browsers modernos) */
-      .campo input::placeholder {
-        color: transparent;
-      }
-      select:invalid {
-        color: #888;
-      }
-    }
-    button[type="submit"] {
-      padding: 0.5rem 1.2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 4px;
-      background: #783adc;
-      color: #fff;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 0.7rem;
-      transition: background 0.15s;
-    }
-    button[type="submit"]:hover {
-      background: #6930b6;
-    }
-  </style>
+  </section>
+  <section class="panel panel-listado">
+    <div class="panel__header">
+      <h2>Listado de Rocas</h2>
+      <p>Mantén un registro claro del inventario de muestras.</p>
+    </div>
+    <div class="panel__scroll">
+      <ul id="listaRocas"></ul>
+    </div>
+  </section>
+  <section class="panel panel-analizador" id="analizador">
+    <h2>Analizador Inteligente</h2>
+    <p>Introduce el identificador de una roca para validar sus datos.</p>
+    <div class="analizador__form">
+      <input type="text" id="nombreAnalizado" placeholder="ID de la roca a analizar">
+      <button id="botonAnalizador">Analizar Roca</button>
+    </div>
+  </section>
+  </main>
   <script type="module" src="./dist/main.js"></script>
 </body>
 </html>
+

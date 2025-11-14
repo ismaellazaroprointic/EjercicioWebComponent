@@ -14,8 +14,9 @@ export class Roca {
 
 
     constructor(id: string, nombre: string, grupo: "Igneas" | "Metamorficas" | "Sedimentarias", dureza: number, tamañoGrano: {grado: number, desc: string}, clasificacion:"Rocas de construccion" | "Rocas ornamentales" | "Rocas de uso en utensilios para el hombre" | "Piedras machacadas", tamañoCristales: number, temperaturaFormacion: number, estructura: string, formaGranos: string, textura: "Vitrea" | "Afanitica" | "Faneritica"){
-        if (!/^[A-Za-z]{2}\d{4}[A-Za-z]{2}$/.test(nombre)) {
-            throw new Error("El nombre debe tener el formato LLDDDDLL (2 letras, 4 números, 2 letras)");
+        if (!/^[A-Za-z]{2}\d{4}[A-Za-z]{2}$/.test(id)) {
+            alert("El ID debe tener el formato LLDDDDLL (2 letras, 4 números, 2 letras)");
+            throw new Error("El ID debe tener el formato LLDDDDLL (2 letras, 4 números, 2 letras)");
         }
         if(tamañoGrano.grado < 2){
             tamañoGrano.desc = "fino";

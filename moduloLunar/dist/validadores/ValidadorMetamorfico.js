@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidadorMetamorfico = void 0;
-class ValidadorMetamorfico {
+export class ValidadorMetamorfico {
     isValid(roca) {
         if (roca.grupo === "Metamorficas" && (roca.tamañoGrano.desc === "medio" || roca.tamañoGrano.desc === "fino") && roca.textura === "Vitrea") {
             return true;
@@ -11,4 +8,3 @@ class ValidadorMetamorfico {
         }
     }
 }
-exports.ValidadorMetamorfico = ValidadorMetamorfico;

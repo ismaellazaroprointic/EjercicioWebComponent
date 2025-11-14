@@ -1,16 +1,18 @@
-import { Astronauta } from "./models/Astronauta";
-import { ValidadorMetamorfico } from "./validadores/ValidadorMetamorfico";
-import { EntradaExtendida } from "./entradas/EntradaExtendida";
-import { SalidaAmericana } from "./salidas/SalidaAmericana";
-import { Mision } from "./models/Mision";
-import { Roca } from "./models/Roca";
-import { IPilotable } from "./interfaces/IPilotable";
-import { IValidable } from "./interfaces/IValidable";
-import { IEntrada } from "./interfaces/IEntrada";
-import { ISalida } from "./interfaces/ISalida";
+import { Astronauta } from "./models/Astronauta.js";
+import { ValidadorMetamorfico } from "./validadores/ValidadorMetamorfico.js";
+import { EntradaExtendida } from "./entradas/EntradaExtendida.js";
+import { SalidaAmericana } from "./salidas/SalidaAmericana.js";
+import { Mision } from "./models/Mision.js";
+import { Roca } from "./models/Roca.js";
+import { IPilotable } from "./interfaces/IPilotable.js";
+import { IValidable } from "./interfaces/IValidable.js";
+import { IEntrada } from "./interfaces/IEntrada.js";
+import { ISalida } from "./interfaces/ISalida.js";
+import { crearDescripcionDetallada } from "./utils.js";
 
+const listaRocas: Roca[] = [];
 
-const piloto: IPilotable = new Astronauta("Pepito", "aeojogies", 45);
+const piloto: IPilotable = new Astronauta("Pepito", "Lopez", 45);
 const misionMetamorfica: IValidable = new ValidadorMetamorfico();
 const entradaRandom: IEntrada = new EntradaExtendida();
 const salidaAmericana: ISalida = new SalidaAmericana();
@@ -20,10 +22,11 @@ const mision: Mision = new Mision(piloto, misionMetamorfica, entradaRandom, sali
 
 // Obtenemos el formulario por su id
 const formulario = document.getElementById("formulario");
+const listaRocasHtml = document.getElementById("listaRocas");
+const idIntroducido = document.getElementById("nombreAnalizado");
+const boton = document.getElementById("botonAnalizador");
 
-if (formulario) {
-    console.log("ILT: Hola");
-    
+if (formulario) {    
     formulario.addEventListener("submit", (event) => {
         event.preventDefault();
         // Obtenemos los datos del formulario usando FormData
@@ -36,19 +39,27 @@ if (formulario) {
 
         // Usamos la entrada configurada en la misión para crear una roca
         const roca = mision.entrada.leer(datos);
-        console.log(roca);
-        
-
-        // Analiza la roca y muestra el resultado (por la salida)
-        mision.analiza(roca);
+        listaRocas.push(roca);        
+        // Añade el nombre e ID de la roca al <ul> de la listaRocasHtml
+        if (listaRocasHtml) {
+            crearDescripcionDetallada(listaRocasHtml,roca);
+        }
     });
 }
 
-//Ya tengo la mision con todos sus componentes, falta crear una roca para analizarla. (que pereza con la de campos que tiene)
+if(idIntroducido && boton){
+    boton.addEventListener("click", () => {
+        const id = (idIntroducido as HTMLInputElement).value.trim();
+        if (id === "") {
+            alert("Introduce un ID de roca");
+        } else {
+            const roca = listaRocas.find(r => r.id === id);
+            if (roca) {
+                mision.analiza(roca);
+            } else {
+                alert("No existe una roca con ese ID");
+            }
+        }
 
-const rocaEjemplo: Roca = new Roca("00001", "as4547fd", "Metamorficas", 5, {grado: 1, desc: ""}, "Rocas ornamentales", 8, -50, "Una estructura robusta con matices azulados", "forma redonda y alargada", "Vitrea");
-
-mision.analiza(rocaEjemplo);
-
-//Tengo que hacer lo mismo que he hecho con los validadores (trasladar las necesidades de la interfaz a una clase) en las entradas y salidas. Las entradas tienen que seguir las especificaciones de la interfaz IEntrada y las salidas la de la interfaz ISalida.
-//Me faltan las entradas, que no tengo claro que hacen ni para que sirven.
+    })
+}

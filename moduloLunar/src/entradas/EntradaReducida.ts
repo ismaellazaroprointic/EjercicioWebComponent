@@ -1,5 +1,5 @@
-import { IEntrada } from "../interfaces/IEntrada";
-import { Roca } from "../models/Roca";
+import { IEntrada } from "../interfaces/IEntrada.js";
+import { Roca } from "../models/Roca.js";
 
 export class EntradaReducida implements IEntrada {
 
