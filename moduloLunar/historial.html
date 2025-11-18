@@ -1,0 +1,28 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>Rocas Validadas</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>  
+<body>
+    <main>
+    <a href="./index.html" class="btn-navegacion">Volver al módulo lunar</a>
+      <h1>Rocas Validadas</h1>
+      <p>Listado de todas las rocas que han sido validadas en el módulo lunar.</p>
+  
+      <section>
+        <h2>Borrar roca por ID</h2>
+        <label for="input-borrar-id">ID de la roca:</label>
+        <input id="input-borrar-id" type="text" />
+        <button id="btn-borrar-id">Borrar</button>
+        <p id="mensaje-borrado"></p>
+      </section>
+  
+      <h2>Listado</h2>
+      <!-- ESTE DIV ES CLAVE -->
+      <div id="lista-rocas"></div>
+    </main>
+  
+    <!-- Apunta al JS COMPILADO -->
+    <script type="module" src="./dist/historial.js"></script>
+  </body>
+  
