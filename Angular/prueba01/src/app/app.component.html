@@ -1,0 +1,13 @@
+<div style="text-align: center; margin-top: 20px;">
+
+  <input type="text" (input)="capturarPalabra1($event)"/>
+  <br>
+  <br>
+  <input type="text" (input)="capturarPalabra2($event)"/>
+  <br>
+  <br>
+  <button (click)="procesarPalabra()">Calcula</button>
+  <br>
+  <br>
+  <input type="text" [value]="coincidentes" readonly />
+</div>
