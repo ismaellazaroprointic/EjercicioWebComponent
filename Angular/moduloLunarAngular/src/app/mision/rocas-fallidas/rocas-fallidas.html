@@ -1,0 +1,26 @@
+<h2 class="titulo">Rocas NO válidas</h2>
+
+<div class="lista" *ngIf="fallidas().length; else vacio">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Grupo</th>
+        <th>Clasificación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let roca of fallidas()">
+        <td>{{ roca.id }}</td>
+        <td>{{ roca.nombre }}</td>
+        <td>{{ roca.grupo }}</td>
+        <td>{{ roca.clasificacion }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #vacio>
+  <p class="vacio">Todavía no hay rocas fallidas.</p>
+</ng-template>

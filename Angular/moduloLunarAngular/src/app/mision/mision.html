@@ -1,5 +1,26 @@
-<h1>Misión</h1>
-
-<p><strong>ID piloto:</strong> {{ directriz.piloto.identificador}}</p>
-<p><strong>Nombre:</strong> {{ directriz.piloto.nombreCompleto }}</p>
-<p><strong>Edad:</strong> {{ directriz.piloto.edad }}</p>
+<div class="mision-layout">
+    <!-- Arriba izquierda: formulario rocas (azul) -->
+    <section class="panel panel--form">
+      <app-roca-form></app-roca-form>
+    </section>
+  
+    <!-- Arriba derecha: lista gris + validador ID -->
+    <section class="panel panel--pendientes">
+      <app-rocas-pendientes></app-rocas-pendientes>
+  
+      <div class="panel__validador">
+        <app-validar-roca [directriz]="directriz"></app-validar-roca>
+      </div>
+    </section>
+  
+    <!-- Abajo izquierda: rocas que NO pasan validación (rojo) -->
+    <section class="panel panel--fallidas">
+      <app-rocas-fallidas></app-rocas-fallidas>
+    </section>
+  
+    <!-- Abajo derecha: rocas que SÍ pasan validación (verde) -->
+    <section class="panel panel--validas">
+      <app-rocas-validas></app-rocas-validas>
+    </section>
+  </div>
+  

@@ -1,0 +1,22 @@
+<h3 class="titulo">Validar roca por ID</h3>
+
+<form (ngSubmit)="validar()" #form="ngForm" class="validador">
+  <div class="grupo">
+    <label for="idRoca">ID roca</label>
+    <input
+      id="idRoca"
+      type="text"
+      name="idRoca"
+      [(ngModel)]="idRoca"
+      required
+    />
+  </div>
+
+  <button type="submit" [disabled]="form.invalid" class="btn">
+    Validar
+  </button>
+</form>
+
+<p class="ayuda">
+  Escribe el ID de una roca de la lista gris para comprobar si cumple las directrices.
+</p>

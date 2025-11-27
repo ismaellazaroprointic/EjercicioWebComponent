@@ -1,0 +1,172 @@
+<!-- src/app/mision/roca-form/roca-form.html -->
+
+<h2 class="titulo">Formulario de rocas</h2>
+<p class="subtitulo">Introduce los datos de la roca para añadirla a la misión</p>
+
+<form #form="ngForm" (ngSubmit)="enviar(form)" class="roca-form">
+
+  <div class="roca-form__grid">
+
+    <!-- Columna izquierda -->
+    <div class="roca-form__col">
+      <div class="campo">
+        <label for="id">ID</label>
+        <input
+          id="id"
+          type="text"
+          name="id"
+          [(ngModel)]="id"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          name="nombre"
+          [(ngModel)]="nombre"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="grupo">Grupo</label>
+        <select
+          id="grupo"
+          name="grupo"
+          [(ngModel)]="grupo"
+          required
+        >
+          <option value="" disabled>Selecciona grupo</option>
+          <option value="Igneas">Ígneas</option>
+          <option value="Metamorficas">Metamórficas</option>
+          <option value="Sedimentarias">Sedimentarias</option>
+        </select>
+      </div>
+
+      <div class="campo campo--sm">
+        <label for="dureza">Dureza (1–10)</label>
+        <input
+          id="dureza"
+          type="number"
+          name="dureza"
+          [(ngModel)]="dureza"
+          min="1"
+          max="10"
+          required
+        />
+      </div>
+
+      <div class="campo campo--sm">
+        <label for="tamGrano">Tamaño de grano (grado)</label>
+        <input
+          id="tamGrano"
+          type="number"
+          name="tamGranoGrado"
+          [(ngModel)]="tamGranoGrado"
+          min="0"
+          required
+        />
+      </div>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="roca-form__col">
+
+      <div class="campo">
+        <label for="clasificacion">Clasificación</label>
+        <select
+          id="clasificacion"
+          name="clasificacion"
+          [(ngModel)]="clasificacion"
+          required
+        >
+          <option value="" disabled>Selecciona clasificación</option>
+          <option value="Rocas de construccion">Rocas de construcción</option>
+          <option value="Rocas ornamentales">Rocas ornamentales</option>
+          <option value="Rocas de uso en utensilios para el hombre">
+            Rocas de uso en utensilios para el hombre
+          </option>
+          <option value="Piedras machacadas">Piedras machacadas</option>
+        </select>
+      </div>
+
+      <div class="campo campo--sm">
+        <label for="tamCristales">Tamaño cristales (0–10)</label>
+        <input
+          id="tamCristales"
+          type="number"
+          name="tamCristales"
+          [(ngModel)]="tamCristales"
+          min="0"
+          max="10"
+          required
+        />
+      </div>
+
+      <div class="campo campo--sm">
+        <label for="tempFormacion">Temp. formación (-100 a 100)</label>
+        <input
+          id="tempFormacion"
+          type="number"
+          name="temperaturaFormacion"
+          [(ngModel)]="temperaturaFormacion"
+          min="-100"
+          max="100"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="estructura">Estructura</label>
+        <input
+          id="estructura"
+          type="text"
+          name="estructura"
+          [(ngModel)]="estructura"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="formaGranos">Forma de granos</label>
+        <input
+          id="formaGranos"
+          type="text"
+          name="formaGranos"
+          [(ngModel)]="formaGranos"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="textura">Textura</label>
+        <select
+          id="textura"
+          name="textura"
+          [(ngModel)]="textura"
+          required
+        >
+          <option value="" disabled>Selecciona textura</option>
+          <option value="Vitrea">Vítrea</option>
+          <option value="Afanitica">Afanítica</option>
+          <option value="Faneritica">Fanerítica</option>
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="acciones">
+    <button
+      type="submit"
+      class="btn"
+      [disabled]="form.invalid"
+    >
+      Añadir roca a la lista
+    </button>
+  </div>
+</form>

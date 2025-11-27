@@ -1,0 +1,102 @@
+/* src/app/mision/roca-form/roca-form.css */
+
+.titulo {
+    margin: 0 0 0.25rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1d4ed8;
+    text-align: center;
+  }
+  
+  .subtitulo {
+    margin: 0 0 1rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+    text-align: center;
+  }
+  
+  .roca-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .roca-form__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  
+  .roca-form__col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  
+  .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .campo label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .campo input,
+  .campo select {
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    padding: 0.4rem 0.55rem;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  
+  .campo input:focus,
+  .campo select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+  }
+  
+  .campo--sm {
+    max-width: 170px;
+  }
+  
+  .acciones {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.3rem;
+  }
+  
+  .btn {
+    border: none;
+    border-radius: 999px;
+    padding: 0.45rem 1.3rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.45);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+  }
+  
+  .btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.55);
+  }
+  
+  .btn:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.4);
+  }
+  
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+    box-shadow: none;
+  }
+  

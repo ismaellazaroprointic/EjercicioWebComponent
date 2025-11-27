@@ -1,0 +1,28 @@
+<!-- src/app/mision/rocas-pendientes/rocas-pendientes.html -->
+
+<h2 class="titulo">Rocas sin validar</h2>
+
+<div class="lista" *ngIf="pendientes().length; else vacio">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Grupo</th>
+        <th>Clasificación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let roca of pendientes()">
+        <td>{{ roca.id }}</td>
+        <td>{{ roca.nombre }}</td>
+        <td>{{ roca.grupo }}</td>
+        <td>{{ roca.clasificacion }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #vacio>
+  <p class="vacio">Todavía no hay rocas pendientes de validar.</p>
+</ng-template>
