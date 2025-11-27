@@ -1,0 +1,129 @@
+<div class="page">
+  <div class="card">
+    <h1 class="card__title">Módulo lunar</h1>
+    <p class="card__subtitle">Configura la misión antes del despegue</p>
+
+    <form #form="ngForm" (ngSubmit)="enviar()" class="form">
+
+      <!-- Datos del astronauta -->
+      <fieldset class="form__section">
+        <legend>Datos del astronauta</legend>
+
+        <div class="form__group">
+          <label for="id">Id</label>
+          <input
+            id="id"
+            type="text"
+            name="id"
+            [(ngModel)]="id"
+            required
+          />
+        </div>
+
+        <div class="form__group">
+          <label for="nombre">Nombre</label>
+          <input
+            id="nombre"
+            type="text"
+            name="nombre"
+            [(ngModel)]="nombre"
+            required
+          />
+        </div>
+
+        <div class="form__group">
+          <label for="apellidos">Apellidos</label>
+          <input
+            id="apellidos"
+            type="text"
+            name="apellidos"
+            [(ngModel)]="apellidos"
+            required
+          />
+        </div>
+
+        <div class="form__group form__group--sm">
+          <label for="edad">Edad</label>
+          <input
+            id="edad"
+            type="number"
+            name="edad"
+            [(ngModel)]="edad"
+            min="0"
+            required
+          />
+        </div>
+      </fieldset>
+
+      <!-- Tipo de misión -->
+      <fieldset class="form__section">
+        <legend>Tipo de misión</legend>
+
+        <label class="radio">
+          <input
+            type="radio"
+            name="mision"
+            value="igneo"
+            [(ngModel)]="mision"
+            required
+          />
+          <span>Misión Ígnea</span>
+        </label>
+
+        <label class="radio">
+          <input
+            type="radio"
+            name="mision"
+            value="metamorfico"
+            [(ngModel)]="mision"
+          />
+          <span>Misión Metamórfica</span>
+        </label>
+
+        <label class="radio">
+          <input
+            type="radio"
+            name="mision"
+            value="sedimentario"
+            [(ngModel)]="mision"
+          />
+          <span>Misión Sedimentaria</span>
+        </label>
+      </fieldset>
+
+      <!-- Idioma -->
+      <fieldset class="form__section">
+        <legend>Idioma</legend>
+
+        <label class="radio">
+          <input
+            type="radio"
+            name="idioma"
+            value="ingles"
+            [(ngModel)]="idioma"
+            required
+          />
+          <span>Inglés</span>
+        </label>
+
+        <label class="radio">
+          <input
+            type="radio"
+            name="idioma"
+            value="espanol"
+            [(ngModel)]="idioma"
+          />
+          <span>Español</span>
+        </label>
+      </fieldset>
+
+      <button
+        type="submit"
+        class="btn"
+        [disabled]="form.invalid"
+      >
+        Enviar misión
+      </button>
+    </form>
+  </div>
+</div>
