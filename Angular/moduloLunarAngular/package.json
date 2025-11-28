@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:es": "ng serve",
+    "build:en": "ng serve --configuration=en-US",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -36,6 +38,7 @@
     "@angular/build": "^21.0.0",
     "@angular/cli": "^21.0.0",
     "@angular/compiler-cli": "^21.0.0",
+    "@angular/localize": "^21.0.1",
     "jsdom": "^27.1.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"

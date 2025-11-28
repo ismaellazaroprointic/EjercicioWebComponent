@@ -1,7 +1,7 @@
 <!-- src/app/mision/roca-form/roca-form.html -->
 
-<h2 class="titulo">Formulario de rocas</h2>
-<p class="subtitulo">Introduce los datos de la roca para añadirla a la misión</p>
+<h2 i18n class="titulo">Formulario de rocas</h2>
+<p i18n class="subtitulo">Introduce los datos de la roca para añadirla a la misión</p>
 
 <form #form="ngForm" (ngSubmit)="enviar(form)" class="roca-form">
 
@@ -21,7 +21,7 @@
       </div>
 
       <div class="campo">
-        <label for="nombre">Nombre</label>
+        <label i18n for="nombre">Nombre</label>
         <input
           id="nombre"
           type="text"
@@ -32,22 +32,22 @@
       </div>
 
       <div class="campo">
-        <label for="grupo">Grupo</label>
+        <label i18n for="grupo">Grupo</label>
         <select
           id="grupo"
           name="grupo"
           [(ngModel)]="grupo"
           required
         >
-          <option value="" disabled>Selecciona grupo</option>
-          <option value="Igneas">Ígneas</option>
-          <option value="Metamorficas">Metamórficas</option>
-          <option value="Sedimentarias">Sedimentarias</option>
+          <option i18n value="" disabled>Selecciona grupo</option>
+          <option i18n value="Igneas">Ígneas</option>
+          <option i18n value="Metamorficas">Metamórficas</option>
+          <option i18n value="Sedimentarias">Sedimentarias</option>
         </select>
       </div>
 
       <div class="campo campo--sm">
-        <label for="dureza">Dureza (1–10)</label>
+        <label i18n for="dureza">Dureza (1–10)</label>
         <input
           id="dureza"
           type="number"
@@ -60,7 +60,7 @@
       </div>
 
       <div class="campo campo--sm">
-        <label for="tamGrano">Tamaño de grano (grado)</label>
+        <label i18n for="tamGrano">Tamaño de grano (grado)</label>
         <input
           id="tamGrano"
           type="number"
@@ -76,25 +76,25 @@
     <div class="roca-form__col">
 
       <div class="campo">
-        <label for="clasificacion">Clasificación</label>
+        <label i18n for="clasificacion">Clasificación</label>
         <select
           id="clasificacion"
           name="clasificacion"
           [(ngModel)]="clasificacion"
           required
         >
-          <option value="" disabled>Selecciona clasificación</option>
-          <option value="Rocas de construccion">Rocas de construcción</option>
-          <option value="Rocas ornamentales">Rocas ornamentales</option>
-          <option value="Rocas de uso en utensilios para el hombre">
+          <option i18n value="" disabled>Selecciona clasificación</option>
+          <option i18n value="Rocas de construccion">Rocas de construcción</option>
+          <option i18n value="Rocas ornamentales">Rocas ornamentales</option>
+          <option i18n value="Rocas de uso en utensilios para el hombre">
             Rocas de uso en utensilios para el hombre
           </option>
-          <option value="Piedras machacadas">Piedras machacadas</option>
+          <option i18n value="Piedras machacadas">Piedras machacadas</option>
         </select>
       </div>
 
       <div class="campo campo--sm">
-        <label for="tamCristales">Tamaño cristales (0–10)</label>
+        <label i18n for="tamCristales">Tamaño cristales (0–10)</label>
         <input
           id="tamCristales"
           type="number"
@@ -107,7 +107,7 @@
       </div>
 
       <div class="campo campo--sm">
-        <label for="tempFormacion">Temp. formación (-100 a 100)</label>
+        <label i18n for="tempFormacion">Temp. formación (-100 a 100)</label>
         <input
           id="tempFormacion"
           type="number"
@@ -120,7 +120,7 @@
       </div>
 
       <div class="campo">
-        <label for="estructura">Estructura</label>
+        <label i18n for="estructura">Estructura</label>
         <input
           id="estructura"
           type="text"
@@ -131,7 +131,7 @@
       </div>
 
       <div class="campo">
-        <label for="formaGranos">Forma de granos</label>
+        <label i18n for="formaGranos">Forma de granos</label>
         <input
           id="formaGranos"
           type="text"
@@ -142,17 +142,17 @@
       </div>
 
       <div class="campo">
-        <label for="textura">Textura</label>
+        <label i18n for="textura">Textura</label>
         <select
           id="textura"
           name="textura"
           [(ngModel)]="textura"
           required
         >
-          <option value="" disabled>Selecciona textura</option>
-          <option value="Vitrea">Vítrea</option>
-          <option value="Afanitica">Afanítica</option>
-          <option value="Faneritica">Fanerítica</option>
+          <option i18n value="" disabled>Selecciona textura</option>
+          <option i18n value="Vitrea">Vítrea</option>
+          <option i18n value="Afanitica">Afanítica</option>
+          <option i18n value="Faneritica">Fanerítica</option>
         </select>
       </div>
 
@@ -161,7 +161,7 @@
   </div>
 
   <div class="acciones">
-    <button
+    <button i18n
       type="submit"
       class="btn"
       [disabled]="form.invalid"

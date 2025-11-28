@@ -13,6 +13,10 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "es",
+        "locales": {"en-US": "src/locale/messages.en-US.xlf"}
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -27,6 +31,9 @@
             ],
             "styles": [
               "src/styles.css"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
             ]
           },
           "configurations": {
@@ -49,6 +56,9 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "en-US": {
+              "localize": ["en-US"]
             }
           },
           "defaultConfiguration": "production"
@@ -61,6 +71,9 @@
             },
             "development": {
               "buildTarget": "moduloLunarAngular:build:development"
+            },
+            "en-US": {
+              "buildTarget": "moduloLunarAngular:build:en-US"
             }
           },
           "defaultConfiguration": "development"
