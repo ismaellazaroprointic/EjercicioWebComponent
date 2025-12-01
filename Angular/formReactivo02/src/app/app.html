@@ -1,0 +1,52 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label>
+    Id:
+    <input type="number" formControlName="id" required>
+  </label>
+
+  <label>
+    Nombre:
+    <input type="text" formControlName="name" required>
+  </label>
+
+  <label>
+    Edad:
+    <input type="number" formControlName="edad" required>
+  </label>
+
+  <label>
+    Peso:
+    <input type="number" formControlName="peso" required>
+  </label>
+
+  <label>
+    Altura:
+    <input type="number" formControlName="altura" required>
+  </label>
+
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+
+<hr>
+
+<ul>
+  <li>
+    <span>ID: {{ profileForm.value.id }}</span>
+  </li>
+  <li>
+    <span>Nombre: {{ profileForm.value.name }}</span>
+  </li>
+  <li>
+    <span>Edad: {{ profileForm.value.edad }}</span>
+  </li>
+  <li>
+    <span>Peso: {{ profileForm.value.peso }}</span>
+  </li>
+  <li>
+    <span>Altura: {{ profileForm.value.altura }}</span>
+  </li>
+</ul>
+
+<p>
+  IMC de la persona: {{ imc || 'No hay IMC' }}
+</p>
