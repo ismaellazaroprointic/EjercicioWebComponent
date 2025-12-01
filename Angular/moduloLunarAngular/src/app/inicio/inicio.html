@@ -1,16 +1,16 @@
 <div class="page">
   <div class="card">
-    <h1 class="card__title">Módulo lunar</h1>
-    <p class="card__subtitle">Configura la misión antes del despegue</p>
+    <h1 i18n class="card__title">Módulo lunar</h1>
+    <p i18n class="card__subtitle">Configura la misión antes del despegue</p>
 
     <form #form="ngForm" (ngSubmit)="enviar()" class="form">
 
       <!-- Datos del astronauta -->
       <fieldset class="form__section">
-        <legend>Datos del astronauta</legend>
+        <legend i18n>Datos del astronauta</legend>
 
         <div class="form__group">
-          <label for="id">Id</label>
+          <label i18n for="id">Id</label>
           <input
             id="id"
             type="text"
@@ -21,7 +21,7 @@
         </div>
 
         <div class="form__group">
-          <label for="nombre">Nombre</label>
+          <label i18n for="nombre">Nombre</label>
           <input
             id="nombre"
             type="text"
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form__group">
-          <label for="apellidos">Apellidos</label>
+          <label i18n for="apellidos">Apellidos</label>
           <input
             id="apellidos"
             type="text"
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form__group form__group--sm">
-          <label for="edad">Edad</label>
+          <label i18n for="edad">Edad</label>
           <input
             id="edad"
             type="number"
@@ -57,7 +57,7 @@
 
       <!-- Tipo de misión -->
       <fieldset class="form__section">
-        <legend>Tipo de misión</legend>
+        <legend i18n>Tipo de misión</legend>
 
         <label class="radio">
           <input
@@ -67,7 +67,7 @@
             [(ngModel)]="mision"
             required
           />
-          <span>Misión Ígnea</span>
+          <span i18n>Misión Ígnea</span>
         </label>
 
         <label class="radio">
@@ -77,7 +77,7 @@
             value="metamorfico"
             [(ngModel)]="mision"
           />
-          <span>Misión Metamórfica</span>
+          <span i18n>Misión Metamórfica</span>
         </label>
 
         <label class="radio">
@@ -87,13 +87,13 @@
             value="sedimentario"
             [(ngModel)]="mision"
           />
-          <span>Misión Sedimentaria</span>
+          <span i18n>Misión Sedimentaria</span>
         </label>
       </fieldset>
 
       <!-- Idioma -->
       <fieldset class="form__section">
-        <legend>Idioma</legend>
+        <legend i18n>Idioma</legend>
 
         <label class="radio">
           <input
@@ -103,7 +103,7 @@
             [(ngModel)]="idioma"
             required
           />
-          <span>Inglés</span>
+          <span i18n>Inglés</span>
         </label>
 
         <label class="radio">
@@ -113,11 +113,12 @@
             value="espanol"
             [(ngModel)]="idioma"
           />
-          <span>Español</span>
+          <span i18n>Español</span>
         </label>
       </fieldset>
 
       <button
+        i18n
         type="submit"
         class="btn"
         [disabled]="form.invalid"
