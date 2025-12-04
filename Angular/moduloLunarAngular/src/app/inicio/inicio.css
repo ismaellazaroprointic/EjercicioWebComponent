@@ -55,46 +55,22 @@
     flex-direction: column;
     gap: 0.35rem;
     margin-bottom: 0.7rem;
+    width: 100%;
   }
   
   .form__group--sm {
     max-width: 150px;
   }
   
-  .form__group label {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #374151;
-  }
-  
-  .form__group input[type="text"],
-  .form__group input[type="number"] {
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
-    padding: 0.45rem 0.6rem;
-    font-size: 0.9rem;
-    outline: none;
-    transition: border-color 0.15s, box-shadow 0.15s;
-  }
-  
-  .form__group input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
-  }
-  
   /* radios */
-  
-  .radio {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    margin-right: 1.4rem;
-    font-size: 0.9rem;
-    color: #374151;
+  .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  
-  .radio input[type="radio"] {
-    accent-color: #2563eb;
+
+  .radio-option {
+    font-size: 0.95rem;
   }
   
   /* botón */

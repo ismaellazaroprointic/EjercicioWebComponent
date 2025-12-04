@@ -1,19 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { RocasStore } from '../../services/rocas.store';
+import { Roca } from '../../services/roca';
 
 @Component({
   selector: 'app-rocas-pendientes',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatTableModule],
   templateUrl: './rocas-pendientes.html',
   styleUrl: './rocas-pendientes.css',
 })
 export class RocasPendientesComponent {
-  constructor(private rocasStore: RocasStore) {}
+  readonly displayedColumns = ['id', 'nombre', 'grupo', 'clasificacion'];
+  readonly dataSource = new MatTableDataSource<Roca>([]);
+  readonly pendientesSignal: () => Roca[];
 
-  // En vez de una propiedad, usamos un método
-  pendientes() {
-    return this.rocasStore.pendientes();
+  constructor(private rocasStore: RocasStore) {
+    this.pendientesSignal = this.rocasStore.pendientes;
+
+    effect(() => {
+      this.dataSource.data = this.pendientesSignal();
+    });
   }
 }

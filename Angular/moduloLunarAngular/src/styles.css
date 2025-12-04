@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos globales de la aplicación */
+
+/* 1) Tema preconstruido de Angular Material (indigo-pink) */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* 2) Ajustes básicos para tipografía y layout */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

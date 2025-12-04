@@ -1,26 +1,37 @@
 <div class="mision-layout">
-    <!-- Arriba izquierda: formulario rocas (azul) -->
-    <section class="panel panel--form">
+  <!-- Arriba izquierda: formulario rocas (azul) -->
+  <mat-card class="panel panel--form mat-elevation-z8">
+    <mat-card-content>
       <app-roca-form></app-roca-form>
-    </section>
-  
-    <!-- Arriba derecha: lista gris + validador ID -->
-    <section class="panel panel--pendientes">
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Arriba derecha: lista gris + validador ID -->
+  <mat-card class="panel panel--pendientes mat-elevation-z8">
+    <mat-card-content class="panel__content">
       <app-rocas-pendientes></app-rocas-pendientes>
-  
+
+      <mat-divider></mat-divider>
+
       <div class="panel__validador">
         <app-validar-roca [directriz]="directriz"></app-validar-roca>
       </div>
-    </section>
-  
+    </mat-card-content>
+  </mat-card>
+
+  <div class="panel-row panel-row--resultados">
     <!-- Abajo izquierda: rocas que NO pasan validación (rojo) -->
-    <section class="panel panel--fallidas">
-      <app-rocas-fallidas></app-rocas-fallidas>
-    </section>
-  
+    <mat-card class="panel panel--fallidas mat-elevation-z8">
+      <mat-card-content>
+        <app-rocas-fallidas></app-rocas-fallidas>
+      </mat-card-content>
+    </mat-card>
+
     <!-- Abajo derecha: rocas que SÍ pasan validación (verde) -->
-    <section class="panel panel--validas">
-      <app-rocas-validas></app-rocas-validas>
-    </section>
+    <mat-card class="panel panel--validas mat-elevation-z8">
+      <mat-card-content>
+        <app-rocas-validas></app-rocas-validas>
+      </mat-card-content>
+    </mat-card>
   </div>
-  
+</div>

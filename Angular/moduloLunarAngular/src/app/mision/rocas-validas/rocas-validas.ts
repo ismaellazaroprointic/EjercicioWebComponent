@@ -1,18 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { RocasStore } from '../../services/rocas.store';
+import { Roca } from '../../services/roca';
 
 @Component({
   selector: 'app-rocas-validas',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatTableModule],
   templateUrl: './rocas-validas.html',
   styleUrl: './rocas-validas.css',
 })
 export class RocasValidasComponent {
-  constructor(private rocasStore: RocasStore) {}
+  readonly displayedColumns = ['id', 'nombre', 'grupo', 'clasificacion'];
+  readonly dataSource = new MatTableDataSource<Roca>([]);
+  readonly validasSignal: () => Roca[];
 
-  validas() {
-    return this.rocasStore.validas();
+  constructor(private rocasStore: RocasStore) {
+    this.validasSignal = this.rocasStore.validas;
+
+    effect(() => {
+      this.dataSource.data = this.validasSignal();
+    });
   }
 }

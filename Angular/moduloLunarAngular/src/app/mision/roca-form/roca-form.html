@@ -9,46 +9,49 @@
 
     <!-- Columna izquierda -->
     <div class="roca-form__col">
-      <div class="campo">
-        <label for="id">ID</label>
+      <mat-form-field appearance="outline" class="campo">
+        <mat-label for="id">ID</mat-label>
         <input
+          matInput
           id="id"
           type="text"
           name="id"
           [(ngModel)]="id"
           required
         />
-      </div>
+      </mat-form-field>
 
-      <div class="campo">
-        <label i18n for="nombre">Nombre</label>
+      <mat-form-field appearance="outline" class="campo">
+        <mat-label i18n for="nombre">Nombre</mat-label>
         <input
+          matInput
           id="nombre"
           type="text"
           name="nombre"
           [(ngModel)]="nombre"
           required
         />
-      </div>
+      </mat-form-field>
 
-      <div class="campo">
-        <label i18n for="grupo">Grupo</label>
-        <select
+      <mat-form-field appearance="outline" class="campo">
+        <mat-label i18n for="grupo">Grupo</mat-label>
+        <mat-select
           id="grupo"
           name="grupo"
           [(ngModel)]="grupo"
           required
         >
-          <option i18n value="" disabled>Selecciona grupo</option>
-          <option i18n value="Igneas">Ígneas</option>
-          <option i18n value="Metamorficas">Metamórficas</option>
-          <option i18n value="Sedimentarias">Sedimentarias</option>
-        </select>
-      </div>
+          <mat-option i18n value="" disabled>Selecciona grupo</mat-option>
+          <mat-option i18n value="Igneas">Ígneas</mat-option>
+          <mat-option i18n value="Metamorficas">Metamórficas</mat-option>
+          <mat-option i18n value="Sedimentarias">Sedimentarias</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-      <div class="campo campo--sm">
-        <label i18n for="dureza">Dureza (1–10)</label>
+      <mat-form-field appearance="outline" class="campo campo--sm">
+        <mat-label i18n for="dureza">Dureza (1–10)</mat-label>
         <input
+          matInput
           id="dureza"
           type="number"
           name="dureza"
@@ -57,11 +60,12 @@
           max="10"
           required
         />
-      </div>
+      </mat-form-field>
 
-      <div class="campo campo--sm">
-        <label i18n for="tamGrano">Tamaño de grano (grado)</label>
+      <mat-form-field appearance="outline" class="campo campo--sm">
+        <mat-label i18n for="tamGrano">Tamaño de grano (grado)</mat-label>
         <input
+          matInput
           id="tamGrano"
           type="number"
           name="tamGranoGrado"
@@ -69,33 +73,34 @@
           min="0"
           required
         />
-      </div>
+      </mat-form-field>
     </div>
 
     <!-- Columna derecha -->
     <div class="roca-form__col">
 
-      <div class="campo">
-        <label i18n for="clasificacion">Clasificación</label>
-        <select
+      <mat-form-field appearance="outline" class="campo">
+        <mat-label i18n for="clasificacion">Clasificación</mat-label>
+        <mat-select
           id="clasificacion"
           name="clasificacion"
           [(ngModel)]="clasificacion"
           required
         >
-          <option i18n value="" disabled>Selecciona clasificación</option>
-          <option i18n value="Rocas de construccion">Rocas de construcción</option>
-          <option i18n value="Rocas ornamentales">Rocas ornamentales</option>
-          <option i18n value="Rocas de uso en utensilios para el hombre">
+          <mat-option i18n value="" disabled>Selecciona clasificación</mat-option>
+          <mat-option i18n value="Rocas de construccion">Rocas de construcción</mat-option>
+          <mat-option i18n value="Rocas ornamentales">Rocas ornamentales</mat-option>
+          <mat-option i18n value="Rocas de uso en utensilios para el hombre">
             Rocas de uso en utensilios para el hombre
-          </option>
-          <option i18n value="Piedras machacadas">Piedras machacadas</option>
-        </select>
-      </div>
+          </mat-option>
+          <mat-option i18n value="Piedras machacadas">Piedras machacadas</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-      <div class="campo campo--sm">
-        <label i18n for="tamCristales">Tamaño cristales (0–10)</label>
+      <mat-form-field appearance="outline" class="campo campo--sm">
+        <mat-label i18n for="tamCristales">Tamaño cristales (0–10)</mat-label>
         <input
+          matInput
           id="tamCristales"
           type="number"
           name="tamCristales"
@@ -104,11 +109,12 @@
           max="10"
           required
         />
-      </div>
+      </mat-form-field>
 
-      <div class="campo campo--sm">
-        <label i18n for="tempFormacion">Temp. formación (-100 a 100)</label>
+      <mat-form-field appearance="outline" class="campo campo--sm">
+        <mat-label i18n for="tempFormacion">Temp. formación (-100 a 100)</mat-label>
         <input
+          matInput
           id="tempFormacion"
           type="number"
           name="temperaturaFormacion"
@@ -117,53 +123,54 @@
           max="100"
           required
         />
-      </div>
+      </mat-form-field>
 
-      <div class="campo">
-        <label i18n for="estructura">Estructura</label>
+      <mat-form-field appearance="outline" class="campo">
+        <mat-label i18n for="estructura">Estructura</mat-label>
         <input
+          matInput
           id="estructura"
           type="text"
           name="estructura"
           [(ngModel)]="estructura"
           required
         />
-      </div>
+      </mat-form-field>
 
-      <div class="campo">
-        <label i18n for="formaGranos">Forma de granos</label>
+      <mat-form-field appearance="outline" class="campo">
+        <mat-label i18n for="formaGranos">Forma de granos</mat-label>
         <input
+          matInput
           id="formaGranos"
           type="text"
           name="formaGranos"
           [(ngModel)]="formaGranos"
           required
         />
-      </div>
+      </mat-form-field>
 
-      <div class="campo">
-        <label i18n for="textura">Textura</label>
-        <select
+      <mat-form-field appearance="outline" class="campo">
+        <mat-label i18n for="textura">Textura</mat-label>
+        <mat-select
           id="textura"
           name="textura"
           [(ngModel)]="textura"
           required
         >
-          <option i18n value="" disabled>Selecciona textura</option>
-          <option i18n value="Vitrea">Vítrea</option>
-          <option i18n value="Afanitica">Afanítica</option>
-          <option i18n value="Faneritica">Fanerítica</option>
-        </select>
-      </div>
+          <mat-option i18n value="" disabled>Selecciona textura</mat-option>
+          <mat-option i18n value="Vitrea">Vítrea</mat-option>
+          <mat-option i18n value="Afanitica">Afanítica</mat-option>
+          <mat-option i18n value="Faneritica">Fanerítica</mat-option>
+        </mat-select>
+      </mat-form-field>
 
     </div>
 
   </div>
 
   <div class="acciones">
-    <button i18n
+    <button mat-raised-button color="primary" i18n
       type="submit"
-      class="btn"
       [disabled]="form.invalid"
     >
       Añadir roca a la lista

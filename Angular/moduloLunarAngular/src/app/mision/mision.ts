@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 import { RocasFallidasComponent } from './rocas-fallidas/rocas-fallidas';
 import { RocasValidasComponent } from './rocas-validas/rocas-validas';
 import { RocasPendientesComponent } from './rocas-pendientes/rocas-pendientes';
@@ -22,6 +24,8 @@ interface IMisionable {
   selector: 'app-mision',
   standalone: true,
   imports: [
+    MatCardModule,
+    MatDividerModule,
     RocaFormComponent,
     RocasPendientesComponent,
     ValidarRocaComponent,

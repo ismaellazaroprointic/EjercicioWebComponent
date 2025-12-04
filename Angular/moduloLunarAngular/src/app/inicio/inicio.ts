@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { IValidable } from '../interfaces/IValidable';
 import { IEntrada } from '../interfaces/IEntrada';
@@ -15,7 +20,14 @@ import { SalidaEuropea } from '../services/salidas/SalidaEuropea';
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [FormsModule],
+  imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+    MatCardModule,
+    MatButtonModule,
+  ],
   templateUrl: './inicio.html',
   styleUrl: './inicio.css',
 })

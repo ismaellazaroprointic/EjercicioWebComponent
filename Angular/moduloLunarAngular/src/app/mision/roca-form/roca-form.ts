@@ -1,13 +1,23 @@
 // src/app/mision/roca-form/roca-form.ts
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 import { Roca } from '../../services/roca';
 import { RocasStore } from '../../services/rocas.store';
 
 @Component({
   selector: 'app-roca-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule
+  ],
   templateUrl: './roca-form.html',
   styleUrl: './roca-form.css',
 })

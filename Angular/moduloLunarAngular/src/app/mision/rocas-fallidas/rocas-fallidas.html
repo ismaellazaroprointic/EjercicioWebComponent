@@ -1,24 +1,31 @@
 <h2 i18n class="titulo">Rocas NO válidas</h2>
 
-<div class="lista" *ngIf="fallidas().length; else vacio">
-  <table>
-    <thead>
-      <tr>
-        <th i18n>ID</th>
-        <th i18n>Nombre</th>
-        <th i18n>Grupo</th>
-        <th i18n>Clasificación</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let roca of fallidas()">
-        <td>{{ roca.id }}</td>
-        <td>{{ roca.nombre }}</td>
-        <td>{{ roca.grupo }}</td>
-        <td>{{ roca.clasificacion }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="lista" *ngIf="fallidasSignal().length; else vacio">
+  <mat-table [dataSource]="dataSource" class="tabla">
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef i18n>ID</mat-header-cell>
+      <mat-cell *matCellDef="let roca">{{ roca.id }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre">
+      <mat-header-cell *matHeaderCellDef i18n>Nombre</mat-header-cell>
+      <mat-cell *matCellDef="let roca">{{ roca.nombre }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="grupo">
+      <mat-header-cell *matHeaderCellDef i18n>Grupo</mat-header-cell>
+      <mat-cell *matCellDef="let roca">{{ roca.grupo }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="clasificacion">
+      <mat-header-cell *matHeaderCellDef i18n>Clasificación</mat-header-cell>
+      <mat-cell *matCellDef="let roca">{{ roca.clasificacion }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
 </div>
 
 <ng-template #vacio>

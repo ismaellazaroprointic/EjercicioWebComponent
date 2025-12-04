@@ -6,49 +6,48 @@
     text-align: center;
   }
   
-  .lista {
-    max-height: 260px;
-    overflow-y: auto;
-    border-radius: 16px;
-    border: 1px solid #fecaca;
-    background: #fef2f2;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.8rem;
-  }
-  
-  thead {
-    position: sticky;
-    top: 0;
-    background: #fee2e2;
-    z-index: 1;
-  }
-  
-  th,
-  td {
-    padding: 0.4rem 0.55rem;
-    text-align: left;
-    border-bottom: 1px solid #fecaca;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  
-  th {
-    font-weight: 600;
-    color: #7f1d1d;
-  }
-  
-  tbody tr:nth-child(even) {
-    background: #fee2e2;
-  }
-  
-  tbody tr:hover {
-    background: #fecaca;
-  }
+.lista {
+  max-height: 260px;
+  overflow-y: auto;
+  border-radius: 16px;
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+}
+
+.tabla {
+  width: 100%;
+  min-width: 400px;
+}
+
+.tabla .mat-mdc-header-row {
+  position: sticky;
+  top: 0;
+  background: #fee2e2;
+  z-index: 1;
+}
+
+.tabla .mat-mdc-header-cell {
+  font-weight: 600;
+  color: #7f1d1d;
+}
+
+.tabla .mat-mdc-cell,
+.tabla .mat-mdc-header-cell {
+  padding: 0.4rem 0.55rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-bottom: 1px solid #fecaca;
+}
+
+.tabla .mat-mdc-row:nth-child(even) {
+  background: #fee2e2;
+}
+
+.tabla .mat-mdc-row:hover {
+  background: #fecaca;
+}
   
   .vacio {
     margin: 0.5rem 0 0;
