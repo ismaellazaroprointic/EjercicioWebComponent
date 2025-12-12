@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Military Army - Sistema de Gestión de Ejércitos</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+        color: #333;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        overflow: hidden;
+      }
+      
+      .header {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+      
+      .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+      
+      .header p {
+        opacity: 0.9;
+        font-size: 1.1em;
+      }
+      
+      .content {
+        padding: 30px;
+      }
+      
+      .info-box {
+        background: #f8f9fa;
+        border-left: 4px solid #667eea;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+      
+      .info-box h2 {
+        color: #667eea;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+      }
+      
+      .info-box ul {
+        margin-left: 20px;
+        line-height: 1.8;
+      }
+      
+      .info-box li {
+        margin-bottom: 5px;
+      }
+      
+      button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.1em;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 20px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        font-weight: 600;
+      }
+      
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      }
+      
+      button:active {
+        transform: translateY(0);
+      }
+      
+      #output {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9em;
+        line-height: 1.6;
+        overflow-x: auto;
+        max-height: 500px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+      
+      .console-note {
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        border-radius: 4px;
+        padding: 15px;
+        margin-bottom: 20px;
+        color: #856404;
+      }
+      
+      .console-note strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🎖️ Sistema de Gestión de Ejércitos</h1>
+        <p>Demostración de Patrones de Diseño y Arquitectura</p>
+      </div>
+      
+      <div class="content">
+        <div class="info-box">
+          <h2>📋 Funcionalidades del Sistema</h2>
+          <ul>
+            <li><strong>Patrón Composite:</strong> Ejércitos compuestos por unidades</li>
+            <li><strong>Patrón Strategy:</strong> Cálculo de Capacidad Militar (CM)</li>
+            <li><strong>Patrón Decorator:</strong> Mejoras de velocidad (+30%) y blindaje (+30%)</li>
+            <li><strong>Patrón Adapter:</strong> Conversión de unidades americanas (MPH → KM/H)</li>
+            <li><strong>Patrón Repository:</strong> Persistencia en IndexedDB y memoria</li>
+            <li><strong>Interfaces de Capacidades:</strong> IDestructor, IMovil, IBlindado</li>
+            <li><strong>Tres Divisiones:</strong> Caballería, Infantería, Artillería</li>
+            <li><strong>Control de Presupuesto:</strong> Fondo máximo por ejército</li>
+          </ul>
+        </div>
+        
+        <div class="console-note">
+          <strong>💡 Nota:</strong> Abre la consola del navegador (F12) para ver logs detallados de cada operación, 
+          incluyendo el proceso de creación, decoradores, adapters y cálculo de CM.
+        </div>
+        
+        <button id="create">🚀 Crear Ejército Completo y Guardar en IndexedDB</button>
+        
+        <div class="info-box">
+          <h2>📊 Estadísticas del Ejército (JSON)</h2>
+        </div>
+        
+        <pre id="output">Haz clic en el botón para crear un ejército y ver sus estadísticas...</pre>
+      </div>
+    </div>
+
+    <script type="module" src="/src/web/bootstrap.ts"></script>
+  </body>
+</html>
+
