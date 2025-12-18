@@ -1,0 +1,166 @@
+// Variables de color - Paleta bancaria profesional
+$primary-color: #003d82;        // Azul corporativo bancario
+$secondary-color: #0066cc;      // Azul acento
+$success-color: #28a745;        // Verde para valores positivos
+$warning-color: #dc3545;        // Rojo para alertas
+$background-light: #f8f9fa;     // Fondo claro
+$background-white: #ffffff;     // Blanco
+$text-primary: #212529;         // Texto principal
+$text-secondary: #6c757d;       // Texto secundario
+$border-color: #dee2e6;         // Bordes
+$shadow-color: rgba(0, 0, 0, 0.1); // Sombras
+
+// Variables de espaciado
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Variables de bordes
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+.text-analyzer-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, $background-light 0%, #e9ecef 100%);
+  padding: $spacing-lg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analyzer-card {
+  background: $background-white;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 4px 6px $shadow-color, 0 1px 3px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.analyzer-header {
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  color: $background-white;
+  padding: $spacing-lg;
+  text-align: center;
+}
+
+.analyzer-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.analyzer-subtitle {
+  margin: $spacing-xs 0 0 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.analyzer-body {
+  padding: $spacing-lg;
+}
+
+.input-section {
+  margin-bottom: $spacing-lg;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: $spacing-sm;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+.text-input {
+  width: 100%;
+  min-height: 200px; // Altura mínima fija
+  padding: $spacing-sm;
+  border: 2px solid $border-color;
+  border-radius: $border-radius-md;
+  font-size: 0.95rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: $text-primary;
+  resize: vertical;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: $secondary-color;
+    box-shadow: 0 0 0 3px rgba($secondary-color, 0.1);
+  }
+
+  &::placeholder {
+    color: $text-secondary;
+    opacity: 0.7;
+  }
+}
+
+.results-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-md;
+}
+
+.result-card {
+  background: $background-light;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px $shadow-color;
+  }
+}
+
+.result-label {
+  font-size: 0.875rem;
+  color: $text-secondary;
+  font-weight: 500;
+  margin-bottom: $spacing-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.result-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primary-color;
+  line-height: 1;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .text-analyzer-container {
+    padding: $spacing-sm;
+  }
+
+  .analyzer-header {
+    padding: $spacing-md;
+  }
+
+  .analyzer-title {
+    font-size: 1.5rem;
+  }
+
+  .analyzer-body {
+    padding: $spacing-md;
+  }
+
+  .results-section {
+    grid-template-columns: 1fr;
+  }
+}

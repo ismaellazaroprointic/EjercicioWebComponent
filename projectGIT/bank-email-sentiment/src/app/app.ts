@@ -1,8 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { TextAnalyzer } from './text-analyzer/text-analyzer';
+
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [TextAnalyzer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
