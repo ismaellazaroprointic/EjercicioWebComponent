@@ -13,18 +13,20 @@
           class="text-input"
           placeholder="Pegue aquí el contenido del correo electrónico para analizar..."
           rows="10"
+          [value]="emailText"
+          (input)="onTextChange($event)"
         ></textarea>
       </div>
 
       <div class="results-section">
         <div class="result-card">
           <span class="result-label">Palabras malsonantes detectadas</span>
-          <span class="result-value">0</span>
+          <span class="result-value">{{ badWordsCount }}</span>
         </div>
 
         <div class="result-card">
           <span class="result-label">Peso total</span>
-          <span class="result-value">0</span>
+          <span class="result-value">{{ totalWeight }}</span>
         </div>
       </div>
     </div>

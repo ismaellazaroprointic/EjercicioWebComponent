@@ -4,6 +4,7 @@ import { TextAnalyzer } from './text-analyzer/text-analyzer';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [TextAnalyzer],
   templateUrl: './app.html',
   styleUrl: './app.css'

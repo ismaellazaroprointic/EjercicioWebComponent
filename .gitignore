@@ -1,0 +1,8 @@
+# Ignorar proyectos locales que no quiero versionar en este repo
+Angular/
+Military\ Army/
+moduloLunar/
+typescript/
+
+# Carpeta de configuración de Cursor/IDE (opcional)
+.cursor/
