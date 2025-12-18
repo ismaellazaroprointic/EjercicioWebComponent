@@ -1,4 +1,4 @@
-const mapeo: Record<string, string> = {
+const ACCENT_MAP: Record<string, string> = {
   "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u",
   "à": "a", "è": "e", "ì": "i", "ò": "o", "ù": "u",
   "ä": "a", "ë": "e", "ï": "i", "ö": "o", "ü": "u",
@@ -13,7 +13,3 @@ const mapeo: Record<string, string> = {
   "Ñ": "n",
   "Ç": "c"
 };
-
-const numero: Record<string,string> = {
-    "0": "o",
-}
