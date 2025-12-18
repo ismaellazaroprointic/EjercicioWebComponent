@@ -1,4 +1,4 @@
-const ACCENT_MAP: Record<string, string> = {
+export const ACCENT_MAP: Record<string, string> = {
   "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u",
   "à": "a", "è": "e", "ì": "i", "ò": "o", "ù": "u",
   "ä": "a", "ë": "e", "ï": "i", "ö": "o", "ü": "u",

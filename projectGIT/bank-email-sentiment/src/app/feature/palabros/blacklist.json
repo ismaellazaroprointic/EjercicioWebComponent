@@ -1,5 +1,5 @@
 {
-    "C\b[a][bv][a][bv][ol]l?(?:es)?\b":"1",
-    "\bce[nm]utri[oa]s?\b":"5",
-    "\bca[bv]ron(?:a|es|as|az[oa]s?)?\b":"10"
+  "\\b[a][bv][a][bv][ol]l?(?:es)?\\b": "1",
+  "\\bce[nm]utri[oa]s?\\b": "5",
+  "\\bca[bv]ron(?:a|es|as|az[oa]s?)?\\b": "10"
 }
