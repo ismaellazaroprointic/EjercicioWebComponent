@@ -2,7 +2,10 @@
   <div class="analyzer-card">
     <header class="analyzer-header">
       <h1 class="analyzer-title">Análisis de Sentimiento</h1>
-      <p class="analyzer-subtitle">Sistema de detección de contenido negativo</p>
+      <p class="analyzer-subtitle">
+        Procesa todos los ficheros <strong>.txt</strong> de un directorio y
+        muestra los resultados por documento y el total.
+      </p>
     </header>
 
     <div class="analyzer-body">
@@ -30,15 +33,24 @@
         ></textarea>
       </div>
 
-      <div class="results-section">
+      <div class="results-section" *ngIf="fileResults.length > 0">
         <div class="result-card">
-          <span class="result-label">Palabras malsonantes detectadas</span>
-          <span class="result-value">{{ badWordsCount }}</span>
+          <span class="result-label">Resultados por documento</span>
+          <ul class="file-results-list">
+            <li
+              class="file-result-item"
+              *ngFor="let result of fileResults"
+            >
+              {{ result.fileName }} ({{ result.wordCount }}, {{ result.totalWeight }})
+            </li>
+          </ul>
         </div>
 
         <div class="result-card">
-          <span class="result-label">Peso total</span>
-          <span class="result-value">{{ totalWeight }}</span>
+          <span class="result-label">Total</span>
+          <span class="result-value">
+            {{ totalBadWords }}, {{ totalWeightAll }}
+          </span>
         </div>
       </div>
     </div>

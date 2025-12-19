@@ -14,10 +14,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render the text analyzer component', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, bank-email-sentiment');
+    // El componente raíz solo renderiza <app-text-analyzer>
+    expect(compiled.querySelector('app-text-analyzer')).not.toBeNull();
   });
 });

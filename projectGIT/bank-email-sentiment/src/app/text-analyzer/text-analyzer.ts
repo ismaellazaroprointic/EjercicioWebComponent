@@ -2,6 +2,12 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatcherService } from '../service/matcher.service';
 
+interface FileAnalysisResult {
+  fileName: string;
+  wordCount: number;
+  totalWeight: number;
+}
+
 @Component({
   selector: 'app-text-analyzer',
   standalone: true,
