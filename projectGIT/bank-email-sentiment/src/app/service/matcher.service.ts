@@ -30,7 +30,6 @@ export class MatcherService {
   }
 
   operateString(input: string): { totalWeight: number, wordCount: number } {
-    console.log('input', input);
     
     const words = input.split(' ');
     let totalWeight = 0;
@@ -42,8 +41,6 @@ export class MatcherService {
         wordCount++;
       }
     }
-    console.log('totalWeight', totalWeight);
-    console.log('wordCount', wordCount);
     return {
       totalWeight,
       wordCount

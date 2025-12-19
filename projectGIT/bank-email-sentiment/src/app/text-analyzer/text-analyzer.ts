@@ -19,7 +19,6 @@ export class TextAnalyzer {
   constructor(private matcherService: MatcherService) {}
 
   onTextChange(event: Event): void {
-    console.log('onTextChange');
     
     const target = event.target as HTMLTextAreaElement;
     this.emailText = target.value ?? '';
