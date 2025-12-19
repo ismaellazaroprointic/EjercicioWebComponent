@@ -13,21 +13,21 @@ export class MatcherService {
    *  - 1, 5 o 10 -> coincidencia encontrada según la blacklist
    */
   checkWord(input: string): number {
-    const normalized = normalizeWord(input);
+  const normalized = normalizeWord(input);
 
+  for (const variant of normalized) {
     for (const [pattern, value] of Object.entries(blacklist)) {
       const regex = new RegExp(pattern, 'i');
 
-      if (regex.test(normalized)) {
+      if (regex.test(variant)) {
         const numericValue = Number(value);
-        // En caso de que el JSON no contenga un número válido, devolvemos 0 por seguridad
         return Number.isNaN(numericValue) ? 0 : numericValue;
       }
     }
-
-    // Si no hay coincidencias devolvemos 0 en lugar de null
-    return 0;
   }
+
+  return 0;
+}
 
   operateString(input: string): { totalWeight: number, wordCount: number } {
     console.log('input', input);
