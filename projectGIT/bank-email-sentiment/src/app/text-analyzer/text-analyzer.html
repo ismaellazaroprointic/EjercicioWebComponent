@@ -7,14 +7,26 @@
 
     <div class="analyzer-body">
       <div class="input-section">
+        <!-- Input oculto para seleccionar archivo -->
+        <input 
+          #fileInput
+          type="file" 
+          accept=".txt" 
+          hidden
+          (change)="onUploadFile($event)"
+        >
+        <button type="button" (click)="abrirSelector()">Subir archivo</button>
+
+        <hr>
+
         <label for="emailText" class="input-label">Texto del correo electrónico</label>
         <textarea
           id="emailText"
           class="text-input"
-          placeholder="Pegue aquí el contenido del correo electrónico para analizar..."
+          placeholder="Pegue aquí el contenido del correo electrónico..."
           rows="10"
-          [value]="emailText"
-          (input)="onTextChange($event)"
+          [(ngModel)]="emailText"
+          (ngModelChange)="onTextChange($event)"
         ></textarea>
       </div>
 

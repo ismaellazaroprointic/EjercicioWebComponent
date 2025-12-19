@@ -1,38 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatcherService } from '../service/matcher.service';
 
 @Component({
   selector: 'app-text-analyzer',
   standalone: true,
-  imports: [],
   templateUrl: './text-analyzer.html',
-  styleUrl: './text-analyzer.scss',
+  styleUrls: ['./text-analyzer.scss'],
+  imports: [FormsModule] // necesario para [(ngModel)]
 })
 export class TextAnalyzer {
-  // Texto introducido en el textarea
-  emailText: string = '';
 
-  // Valores numéricos mostrados en los result-cards
-  badWordsCount: number = 0;
-  totalWeight: number = 0;
+  @ViewChild('fileInput', { static: true })
+  fileInput!: ElementRef<HTMLInputElement>;
 
-  constructor(private matcherService: MatcherService) {}
+  emailText = '';
+  badWordsCount = 0;
+  totalWeight = 0;
 
-  onTextChange(event: Event): void {
-    
-    const target = event.target as HTMLTextAreaElement;
-    this.emailText = target.value ?? '';
+  constructor(private matcher: MatcherService) {}
 
-    if (!this.emailText.trim()) {
-      this.badWordsCount = 0;
-      this.totalWeight = 0;
-      return;
-    }
+  onTextChange(value: string) {
+    const res = this.matcher.operateString(value);
+    this.totalWeight = res.totalWeight;
+    this.badWordsCount = res.wordCount;
+  }
 
-    const { totalWeight, wordCount } =
-      this.matcherService.operateString(this.emailText);
+  abrirSelector() {
+    this.fileInput.nativeElement.click();
+  }
 
-    this.badWordsCount = wordCount;
-    this.totalWeight = totalWeight;
+  onUploadFile(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (!input.files?.length) return;
+
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      this.emailText = reader.result as string;
+      const res = this.matcher.operateString(this.emailText);
+      this.totalWeight = res.totalWeight;
+      this.badWordsCount = res.wordCount;
+    };
+
+    reader.readAsText(file);
   }
 }
